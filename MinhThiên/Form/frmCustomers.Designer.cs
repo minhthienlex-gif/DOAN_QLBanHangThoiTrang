@@ -46,12 +46,6 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.dgvCustomers = new System.Windows.Forms.DataGridView();
-            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
@@ -59,6 +53,12 @@
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnNotsaved = new Guna.UI2.WinForms.Guna2Button();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.CustomerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fullname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
             this.SuspendLayout();
@@ -265,48 +265,7 @@
             this.dgvCustomers.RowTemplate.Height = 24;
             this.dgvCustomers.Size = new System.Drawing.Size(1254, 384);
             this.dgvCustomers.TabIndex = 25;
-            // 
-            // CustomerID
-            // 
-            this.CustomerID.HeaderText = "Mã khách hàng";
-            this.CustomerID.MinimumWidth = 6;
-            this.CustomerID.Name = "CustomerID";
-            this.CustomerID.Width = 200;
-            // 
-            // Fullname
-            // 
-            this.Fullname.HeaderText = "Tên khách hàng";
-            this.Fullname.MinimumWidth = 6;
-            this.Fullname.Name = "Fullname";
-            this.Fullname.Width = 200;
-            // 
-            // Phone
-            // 
-            this.Phone.HeaderText = "Số điện thoại";
-            this.Phone.MinimumWidth = 6;
-            this.Phone.Name = "Phone";
-            this.Phone.Width = 200;
-            // 
-            // Address
-            // 
-            this.Address.HeaderText = "Địa chỉ";
-            this.Address.MinimumWidth = 6;
-            this.Address.Name = "Address";
-            this.Address.Width = 200;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.MinimumWidth = 6;
-            this.Email.Name = "Email";
-            this.Email.Width = 200;
-            // 
-            // CreatedDate
-            // 
-            this.CreatedDate.HeaderText = "Ngày tạo";
-            this.CreatedDate.MinimumWidth = 6;
-            this.CreatedDate.Name = "CreatedDate";
-            this.CreatedDate.Width = 200;
+            this.dgvCustomers.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomers_CellEnter);
             // 
             // label7
             // 
@@ -338,6 +297,7 @@
             this.btnAdd.TabIndex = 31;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -359,6 +319,7 @@
             this.btnEdit.TabIndex = 31;
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -380,6 +341,7 @@
             this.btnDelete.TabIndex = 31;
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -401,6 +363,7 @@
             this.btnSave.TabIndex = 31;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnNotsaved
             // 
@@ -422,6 +385,7 @@
             this.btnNotsaved.TabIndex = 31;
             this.btnNotsaved.Text = "Not saved";
             this.btnNotsaved.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnNotsaved.Click += new System.EventHandler(this.btnNotsaved_Click);
             // 
             // txtSearch
             // 
@@ -445,6 +409,54 @@
             this.txtSearch.Size = new System.Drawing.Size(377, 28);
             this.txtSearch.TabIndex = 24;
             // 
+            // CustomerID
+            // 
+            this.CustomerID.DataPropertyName = "CustomerID";
+            this.CustomerID.HeaderText = "Mã khách hàng";
+            this.CustomerID.MinimumWidth = 6;
+            this.CustomerID.Name = "CustomerID";
+            this.CustomerID.Width = 200;
+            // 
+            // Fullname
+            // 
+            this.Fullname.DataPropertyName = "Fullname";
+            this.Fullname.HeaderText = "Tên khách hàng";
+            this.Fullname.MinimumWidth = 6;
+            this.Fullname.Name = "Fullname";
+            this.Fullname.Width = 200;
+            // 
+            // Phone
+            // 
+            this.Phone.DataPropertyName = "Phone";
+            this.Phone.HeaderText = "Số điện thoại";
+            this.Phone.MinimumWidth = 6;
+            this.Phone.Name = "Phone";
+            this.Phone.Width = 200;
+            // 
+            // Address
+            // 
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Địa chỉ";
+            this.Address.MinimumWidth = 6;
+            this.Address.Name = "Address";
+            this.Address.Width = 200;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.Width = 200;
+            // 
+            // CreatedDate
+            // 
+            this.CreatedDate.DataPropertyName = "CreatedDate";
+            this.CreatedDate.HeaderText = "Ngày tạo";
+            this.CreatedDate.MinimumWidth = 6;
+            this.CreatedDate.Name = "CreatedDate";
+            this.CreatedDate.Width = 200;
+            // 
             // frmCustomers
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -463,6 +475,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCustomers";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.frmCustomers_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
@@ -493,12 +506,12 @@
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnEdit;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fullname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedDate;
-        private System.Windows.Forms.TextBox txtAddress;
     }
 }

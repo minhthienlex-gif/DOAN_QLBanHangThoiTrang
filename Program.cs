@@ -16,7 +16,7 @@ namespace DOAN_QLBanHangThoiTrang
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEmployees());
+            Application.Run(new frmCustomers());
         }
     }
 }

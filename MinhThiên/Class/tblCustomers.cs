@@ -19,7 +19,7 @@ namespace DOAN_QLBanHangThoiTrang
 
         [Required]
         [StringLength(100)]
-        public string Name { get; set; }
+        public string FullName { get; set; }
 
         [StringLength(15)]
         public string Phone { get; set; }
