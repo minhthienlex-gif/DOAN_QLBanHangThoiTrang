@@ -18,7 +18,7 @@ namespace DOAN_QLBanHangThoiTrang
         bool Addnew = false;
         public frmAccounts()
         {
-            InitializeComponent();
+            InitializeComponent();//sssss
         }
         private void SetContol(bool check)
         {
