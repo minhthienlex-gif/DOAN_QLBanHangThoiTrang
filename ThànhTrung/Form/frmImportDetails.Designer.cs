@@ -44,7 +44,7 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dgvImportDetails = new System.Windows.Forms.DataGridView();
+            this.dgvImportDetail = new System.Windows.Forms.DataGridView();
             this.ImportDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ImportID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +59,7 @@
             this.guna2GroupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImportDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImportDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -244,22 +244,23 @@
             this.txtSearch.Size = new System.Drawing.Size(377, 28);
             this.txtSearch.TabIndex = 37;
             // 
-            // dgvImportDetails
+            // dgvImportDetail
             // 
-            this.dgvImportDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvImportDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvImportDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvImportDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ImportDetailID,
             this.ImportID,
             this.ProductID,
             this.Quantity,
             this.Price,
             this.Total});
-            this.dgvImportDetails.Location = new System.Drawing.Point(120, 343);
-            this.dgvImportDetails.Name = "dgvImportDetails";
-            this.dgvImportDetails.RowHeadersWidth = 51;
-            this.dgvImportDetails.RowTemplate.Height = 24;
-            this.dgvImportDetails.Size = new System.Drawing.Size(1171, 370);
-            this.dgvImportDetails.TabIndex = 39;
+            this.dgvImportDetail.Location = new System.Drawing.Point(120, 343);
+            this.dgvImportDetail.Name = "dgvImportDetail";
+            this.dgvImportDetail.RowHeadersWidth = 51;
+            this.dgvImportDetail.RowTemplate.Height = 24;
+            this.dgvImportDetail.Size = new System.Drawing.Size(1171, 370);
+            this.dgvImportDetail.TabIndex = 39;
+            this.dgvImportDetail.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImportDetail_CellEnter);
             // 
             // ImportDetailID
             // 
@@ -329,6 +330,7 @@
             this.btnAdd.TabIndex = 44;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -350,6 +352,7 @@
             this.btnEdit.TabIndex = 45;
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -371,6 +374,7 @@
             this.btnDelete.TabIndex = 46;
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -392,6 +396,7 @@
             this.btnSave.TabIndex = 47;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnNotsaved
             // 
@@ -413,6 +418,7 @@
             this.btnNotsaved.TabIndex = 48;
             this.btnNotsaved.Text = "Not saved";
             this.btnNotsaved.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnNotsaved.Click += new System.EventHandler(this.btnNotsaved_Click);
             // 
             // frmImportDetails
             // 
@@ -423,18 +429,19 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnNotsaved);
-            this.Controls.Add(this.dgvImportDetails);
+            this.Controls.Add(this.dgvImportDetail);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "frmImportDetails";
             this.Text = "frmImportDetails";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.frmImportDetails_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImportDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImportDetail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -457,7 +464,7 @@
         private System.Windows.Forms.ComboBox cbbProductID;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dgvImportDetails;
+        private System.Windows.Forms.DataGridView dgvImportDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn ImportDetailID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ImportID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;

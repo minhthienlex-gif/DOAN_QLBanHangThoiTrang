@@ -12,7 +12,7 @@ namespace DOAN_QLBanHangThoiTrang
 {
     public partial class frmCustomers : Form
     {
-        Datacontext db = new Datacontext();
+        DataContext db = new DataContext();
         bool Addnew = false;
         public frmCustomers()
         {

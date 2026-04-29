@@ -41,9 +41,10 @@
             this.cbbBillID = new System.Windows.Forms.ComboBox();
             this.nudQuantity = new System.Windows.Forms.NumericUpDown();
             this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dgvBillDetails = new System.Windows.Forms.DataGridView();
+            this.dgvBillDetail = new System.Windows.Forms.DataGridView();
             this.BillDetailID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BillID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,10 +56,9 @@
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnNotsaved = new Guna.UI2.WinForms.Guna2Button();
-            this.txtPrice = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetail)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -202,6 +202,14 @@
             this.txtTotal.Size = new System.Drawing.Size(235, 22);
             this.txtTotal.TabIndex = 4;
             // 
+            // txtPrice
+            // 
+            this.txtPrice.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtPrice.Location = new System.Drawing.Point(146, 101);
+            this.txtPrice.Name = "txtPrice";
+            this.txtPrice.Size = new System.Drawing.Size(235, 22);
+            this.txtPrice.TabIndex = 5;
+            // 
             // txtSearch
             // 
             this.txtSearch.BorderRadius = 15;
@@ -235,22 +243,23 @@
             this.label9.TabIndex = 43;
             this.label9.Text = "Danh sách chi tiết hóa đơn";
             // 
-            // dgvBillDetails
+            // dgvBillDetail
             // 
-            this.dgvBillDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBillDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvBillDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBillDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BillDetailID,
             this.BillID,
             this.ProductID,
             this.Quantity,
             this.Price,
             this.Total});
-            this.dgvBillDetails.Location = new System.Drawing.Point(125, 321);
-            this.dgvBillDetails.Name = "dgvBillDetails";
-            this.dgvBillDetails.RowHeadersWidth = 51;
-            this.dgvBillDetails.RowTemplate.Height = 24;
-            this.dgvBillDetails.Size = new System.Drawing.Size(1131, 378);
-            this.dgvBillDetails.TabIndex = 44;
+            this.dgvBillDetail.Location = new System.Drawing.Point(125, 321);
+            this.dgvBillDetail.Name = "dgvBillDetail";
+            this.dgvBillDetail.RowHeadersWidth = 51;
+            this.dgvBillDetail.RowTemplate.Height = 24;
+            this.dgvBillDetail.Size = new System.Drawing.Size(1131, 378);
+            this.dgvBillDetail.TabIndex = 44;
+            this.dgvBillDetail.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBillDetail_CellEnter);
             // 
             // BillDetailID
             // 
@@ -320,6 +329,7 @@
             this.btnAdd.TabIndex = 49;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -341,6 +351,7 @@
             this.btnEdit.TabIndex = 50;
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -362,6 +373,7 @@
             this.btnDelete.TabIndex = 51;
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -383,6 +395,7 @@
             this.btnSave.TabIndex = 52;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnNotsaved
             // 
@@ -404,14 +417,7 @@
             this.btnNotsaved.TabIndex = 53;
             this.btnNotsaved.Text = "Not saved";
             this.btnNotsaved.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtPrice
-            // 
-            this.txtPrice.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtPrice.Location = new System.Drawing.Point(146, 101);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(235, 22);
-            this.txtPrice.TabIndex = 5;
+            this.btnNotsaved.Click += new System.EventHandler(this.btnNotsaved_Click);
             // 
             // frmBillDetails
             // 
@@ -422,7 +428,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnNotsaved);
-            this.Controls.Add(this.dgvBillDetails);
+            this.Controls.Add(this.dgvBillDetail);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -430,10 +436,11 @@
             this.Name = "frmBillDetails";
             this.Text = "frmBillDetails";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.frmBillDetails_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQuantity)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetails)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBillDetail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,7 +463,7 @@
         private System.Windows.Forms.TextBox txtTotal;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dgvBillDetails;
+        private System.Windows.Forms.DataGridView dgvBillDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn BillDetailID;
         private System.Windows.Forms.DataGridViewTextBoxColumn BillID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;

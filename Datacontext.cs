@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DOAN_QLBanHangThoiTrang
 {
-    internal class Datacontext : DbContext
+    internal class DataContext : DbContext
     {
-        public Datacontext() : base("name=MyConnectionString")
+        public DataContext() : base("name=MyConnectionString")
         {
         }
 

@@ -45,14 +45,14 @@
             this.dtpImportDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.dgvImports = new System.Windows.Forms.DataGridView();
+            this.dgvImport = new System.Windows.Forms.DataGridView();
             this.ImportID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ImportDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.guna2GroupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImports)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImport)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdd
@@ -75,6 +75,7 @@
             this.btnAdd.TabIndex = 37;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -96,6 +97,7 @@
             this.btnEdit.TabIndex = 38;
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -117,6 +119,7 @@
             this.btnDelete.TabIndex = 39;
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -138,6 +141,7 @@
             this.btnSave.TabIndex = 40;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnNotsaved
             // 
@@ -159,6 +163,7 @@
             this.btnNotsaved.TabIndex = 41;
             this.btnNotsaved.Text = "Not saved";
             this.btnNotsaved.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnNotsaved.Click += new System.EventHandler(this.btnNotsaved_Click);
             // 
             // guna2GroupBox1
             // 
@@ -255,7 +260,7 @@
             // 
             this.cbbEmployeeID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbEmployeeID.FormattingEnabled = true;
-            this.cbbEmployeeID.Location = new System.Drawing.Point(537, 10);
+            this.cbbEmployeeID.Location = new System.Drawing.Point(537, 8);
             this.cbbEmployeeID.Name = "cbbEmployeeID";
             this.cbbEmployeeID.Size = new System.Drawing.Size(235, 28);
             this.cbbEmployeeID.TabIndex = 2;
@@ -302,20 +307,21 @@
             this.txtSearch.Size = new System.Drawing.Size(377, 28);
             this.txtSearch.TabIndex = 43;
             // 
-            // dgvImports
+            // dgvImport
             // 
-            this.dgvImports.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvImports.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvImport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvImport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ImportID,
             this.EmployeeID,
             this.ImportDate,
             this.TotalAmount});
-            this.dgvImports.Location = new System.Drawing.Point(173, 319);
-            this.dgvImports.Name = "dgvImports";
-            this.dgvImports.RowHeadersWidth = 51;
-            this.dgvImports.RowTemplate.Height = 24;
-            this.dgvImports.Size = new System.Drawing.Size(1053, 341);
-            this.dgvImports.TabIndex = 45;
+            this.dgvImport.Location = new System.Drawing.Point(173, 319);
+            this.dgvImport.Name = "dgvImport";
+            this.dgvImport.RowHeadersWidth = 51;
+            this.dgvImport.RowTemplate.Height = 24;
+            this.dgvImport.Size = new System.Drawing.Size(1053, 341);
+            this.dgvImport.TabIndex = 45;
+            this.dgvImport.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImport_CellEnter);
             // 
             // ImportID
             // 
@@ -353,7 +359,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1442, 677);
-            this.Controls.Add(this.dgvImports);
+            this.Controls.Add(this.dgvImport);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.guna2GroupBox1);
@@ -365,10 +371,11 @@
             this.Name = "frmImports";
             this.Text = "frmImports";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.frmImports_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvImports)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvImport)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,7 +400,7 @@
         private System.Windows.Forms.DateTimePicker dtpImportDate;
         private System.Windows.Forms.Label label7;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
-        private System.Windows.Forms.DataGridView dgvImports;
+        private System.Windows.Forms.DataGridView dgvImport;
         private System.Windows.Forms.DataGridViewTextBoxColumn ImportID;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ImportDate;
