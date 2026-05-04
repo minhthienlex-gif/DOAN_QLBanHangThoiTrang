@@ -488,7 +488,7 @@
             // frmEmployees
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1308, 809);
+            this.ClientSize = new System.Drawing.Size(1133, 719);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
