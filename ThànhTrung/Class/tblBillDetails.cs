@@ -22,8 +22,8 @@ namespace DOAN_QLBanHangThoiTrang
 
         public int Quantity { get; set; }
 
-            [Column(TypeName = "decimal")]
-            public decimal Price { get; set; }
+        [Column(TypeName = "decimal")]
+        public decimal Price { get; set; }
 
         [Column(TypeName = "decimal")]
         public decimal Total { get; set; }

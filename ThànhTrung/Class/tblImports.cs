@@ -15,11 +15,11 @@ namespace DOAN_QLBanHangThoiTrang
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ImportID { get; set; }
 
-        public int? EmployeeID { get; set; }
+        public int EmployeeID { get; set; }
 
-        public DateTime? ImportDate { get; set; }
+        public DateTime ImportDate { get; set; }
 
         [Column(TypeName = "decimal")]
-        public decimal? TotalAmount { get; set; }
+        public decimal TotalAmount { get; set; }
     }
 }
