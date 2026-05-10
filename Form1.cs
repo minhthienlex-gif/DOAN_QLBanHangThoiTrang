@@ -12,11 +12,17 @@ namespace DOAN_QLBanHangThoiTrang
 {
     public partial class frmMain : Form
     {
+        string Username, FullName, Role;
         public frmMain()
         {
             InitializeComponent();
         }
-
-        
+        public frmMain( string un, string ro)
+        {
+            InitializeComponent();
+            Username = un;
+            Role = ro;
+            
+        }
     }
 }

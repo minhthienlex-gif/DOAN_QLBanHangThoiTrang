@@ -55,12 +55,13 @@
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mn1System,
-            this.mn1SystemManagement,
-            this.mn1ManageCategory,
-            this.mn1SalesManagement,
-            this.mn1Help});
+                this.mn1System,
+                this.mn1SystemManagement,
+                this.mn1ManageCategory,
+                this.mn1SalesManagement,
+                this.mn1Help});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1330, 33);
@@ -124,14 +125,14 @@
             // 
             this.mn2Account.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_account_50;
             this.mn2Account.Name = "mn2Account";
-            this.mn2Account.Size = new System.Drawing.Size(224, 30);
+            this.mn2Account.Size = new System.Drawing.Size(177, 30);
             this.mn2Account.Text = "Tài khoản";
             // 
             // mn2Employee
             // 
             this.mn2Employee.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_manager_50;
             this.mn2Employee.Name = "mn2Employee";
-            this.mn2Employee.Size = new System.Drawing.Size(224, 30);
+            this.mn2Employee.Size = new System.Drawing.Size(177, 30);
             this.mn2Employee.Text = "Nhân viên";
             // 
             // mn1ManageCategory
@@ -148,21 +149,21 @@
             // 
             this.mn2Product.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_product_48;
             this.mn2Product.Name = "mn2Product";
-            this.mn2Product.Size = new System.Drawing.Size(224, 30);
+            this.mn2Product.Size = new System.Drawing.Size(213, 30);
             this.mn2Product.Text = "Sản phẩm";
             // 
             // mn2Categorie
             // 
             this.mn2Categorie.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_management_48;
             this.mn2Categorie.Name = "mn2Categorie";
-            this.mn2Categorie.Size = new System.Drawing.Size(224, 30);
+            this.mn2Categorie.Size = new System.Drawing.Size(213, 30);
             this.mn2Categorie.Text = "Loại sản phẩm";
             // 
             // mn2Customer
             // 
             this.mn2Customer.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_user_groups_48;
             this.mn2Customer.Name = "mn2Customer";
-            this.mn2Customer.Size = new System.Drawing.Size(224, 30);
+            this.mn2Customer.Size = new System.Drawing.Size(213, 30);
             this.mn2Customer.Text = "Khách hàng ";
             // 
             // mn1SalesManagement
