@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace DOAN_QLBanHangThoiTrang
 {
-    public partial class frmMain : Form
+    public partial class frmLogin : Form
     {
-        public frmMain()
+        public frmLogin()
         {
             InitializeComponent();
         }
 
-        
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
