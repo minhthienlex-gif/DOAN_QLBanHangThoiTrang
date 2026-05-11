@@ -19,7 +19,20 @@ namespace DOAN_QLBanHangThoiTrang
 
         public DateTime ImportDate { get; set; }
 
+        [Required]
+        [StringLength(100)]
+        public string SupplierName { get; set; }
+
+        [StringLength(15)]
+        public string SupplierPhone { get; set; }
+
+        [StringLength(200)]
+        public string SupplierAddress { get; set; }
+
         [Column(TypeName = "decimal")]
         public decimal TotalAmount { get; set; }
+
+        [StringLength(200)]
+        public string Note { get; set; }
     }
 }

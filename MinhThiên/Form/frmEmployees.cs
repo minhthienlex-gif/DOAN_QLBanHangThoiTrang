@@ -41,7 +41,7 @@ namespace DOAN_QLBanHangThoiTrang
                        select a;
 
             cbbAccountID.DataSource = data.ToList();
-            cbbAccountID.DisplayMember = "Username"; 
+            cbbAccountID.DisplayMember = "FullName"; 
             cbbAccountID.ValueMember = "AccountID";   
         }
         private void LoadGridData()

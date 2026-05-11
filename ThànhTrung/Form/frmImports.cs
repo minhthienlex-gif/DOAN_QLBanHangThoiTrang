@@ -22,7 +22,11 @@ namespace DOAN_QLBanHangThoiTrang
         {
             txtImportID.Enabled = false;
             cbbEmployeeID.Enabled = check;
-            dtpImportDate.Enabled = false;
+            txtSupplierName.Enabled = check;
+            txtSupplierPhone.Enabled = check;
+            txtSupplierAddress.Enabled = check;
+            txtNote.Enabled = check;
+            dtpImportDate.Enabled = check;
             txtTotalAmount.Enabled = check;
 
             btnSave.Enabled = check;
@@ -40,11 +44,20 @@ namespace DOAN_QLBanHangThoiTrang
             dgvImport.DataSource = data.ToList();
             setContol(false);
         }
+        private void LoadEmployees()
+        {
+                cbbEmployeeID.DataSource = db.Employees.ToList();
+
+                cbbEmployeeID.DisplayMember = "FullName";   // hiện tên
+                cbbEmployeeID.ValueMember = "EmployeeID";   // lưu ID
+                 // lưu ID
+        }
         private void frmImports_Load(object sender, EventArgs e)
         {
             dgvImport.AutoGenerateColumns = false;
             dgvImport.AllowUserToAddRows = false;
             LoadGridData();
+            LoadEmployees();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -84,8 +97,12 @@ namespace DOAN_QLBanHangThoiTrang
             if (i < 0) return;
             txtImportID.Text = dgvImport.Rows[i].Cells["ImportID"].Value.ToString();
             cbbEmployeeID.Text = dgvImport.Rows[i].Cells["EmployeeID"].Value.ToString();
+            txtSupplierName.Text = dgvImport.Rows[i].Cells["SupplierName"].Value.ToString();
+            txtSupplierPhone.Text = dgvImport.Rows[i].Cells["SupplierPhone"].Value.ToString();
+            txtSupplierAddress.Text = dgvImport.Rows[i].Cells["SupplierAddress"].Value.ToString();
             dtpImportDate.Text = Convert.ToDateTime(dgvImport.Rows[i].Cells["ImportDate"].Value).ToString("dd/MM/yyyy");
             txtTotalAmount.Text = dgvImport.Rows[i].Cells["TotalAmount"].Value.ToString();
+            txtNote.Text = dgvImport.Rows[i].Cells["Note"].Value.ToString();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -95,8 +112,11 @@ namespace DOAN_QLBanHangThoiTrang
             txtImportID.Clear();
             txtTotalAmount.Clear();
             cbbEmployeeID.Text = "";
+            txtSupplierName.Clear();
+            txtSupplierAddress.Clear();
+            txtSupplierPhone.Clear();
             dtpImportDate.Text = DateTime.Now.ToString("dd/MM/yyyy");
-
+            txtNote.Clear();
             cbbEmployeeID.Focus();
         }
 
@@ -136,7 +156,11 @@ namespace DOAN_QLBanHangThoiTrang
                 {
 
                     EmployeeID = int.Parse(cbbEmployeeID.Text.Trim()),
+                    SupplierName = txtSupplierName.Text.Trim(),
+                    SupplierAddress = txtSupplierAddress.Text.Trim(),
+                    SupplierPhone = txtSupplierPhone.Text.Trim(),
                     ImportDate = DateTime.ParseExact(dtpImportDate.Text, "dd/MM/yyyy", null),
+                    Note = txtNote.Text.Trim(),
                     TotalAmount = decimal.Parse(txtTotalAmount.Text.Trim())
                 };
 
@@ -155,7 +179,11 @@ namespace DOAN_QLBanHangThoiTrang
                 if (importUpdate != null)
                 {
                     importUpdate.EmployeeID = int.Parse(cbbEmployeeID.Text.Trim());
+                    importUpdate.SupplierName = txtSupplierName.Text.Trim();
+                    importUpdate.SupplierPhone = txtSupplierPhone.Text.Trim();
+                    importUpdate.SupplierAddress = txtSupplierAddress.Text.Trim();
                     importUpdate.ImportDate = DateTime.ParseExact(dtpImportDate.Text, "dd/MM/yyyy", null);
+                    importUpdate.Note = txtNote.Text.Trim();
                     importUpdate.TotalAmount = decimal.Parse(txtTotalAmount.Text.Trim());
 
                     db.SaveChanges();

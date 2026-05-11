@@ -25,8 +25,8 @@ namespace DOAN_QLBanHangThoiTrang
         [StringLength(20)]
         public string Role { get; set; }
 
-        public bool? Status { get; set; }
+        public bool Status { get; set; }
 
-        public DateTime? CreatedDate { get; set; }
+        public DateTime CreatedDate { get; set; }
     }
 }
