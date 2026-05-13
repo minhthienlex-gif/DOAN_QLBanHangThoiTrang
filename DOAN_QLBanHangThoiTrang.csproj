@@ -94,16 +94,16 @@
     <Compile Include="ThànhTrung\Form\frmBillDetails.Designer.cs">
       <DependentUpon>frmBillDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmBills.cs">
+    <Compile Include="Cảnh Hưng\Form\frmBills.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmBills.Designer.cs">
+    <Compile Include="Cảnh Hưng\Form\frmBills.Designer.cs">
       <DependentUpon>frmBills.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCategories.cs">
+    <Compile Include="Cảnh Hưng\Form\frmCategories.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCategories.Designer.cs">
+    <Compile Include="Cảnh Hưng\Form\frmCategories.Designer.cs">
       <DependentUpon>frmCategories.cs</DependentUpon>
     </Compile>
     <Compile Include="MinhThiên\Form\frmCustomers.cs">
@@ -130,23 +130,23 @@
     <Compile Include="ThànhTrung\Form\frmImports.Designer.cs">
       <DependentUpon>frmImports.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmProducts.cs">
+    <Compile Include="Cảnh Hưng\Form\frmProducts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmProducts.Designer.cs">
+    <Compile Include="Cảnh Hưng\Form\frmProducts.Designer.cs">
       <DependentUpon>frmProducts.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MinhThiên\Class\tblAccounts.cs" />
     <Compile Include="ThànhTrung\Class\tblBillDetails.cs" />
-    <Compile Include="tblBills.cs" />
-    <Compile Include="tblCategories.cs" />
+    <Compile Include="Cảnh Hưng\Class\tblBills.cs" />
+    <Compile Include="Cảnh Hưng\Class\tblCategories.cs" />
     <Compile Include="MinhThiên\Class\tblCustomers.cs" />
     <Compile Include="MinhThiên\Class\tblEmployees.cs" />
     <Compile Include="ThànhTrung\Class\tblImportDetails.cs" />
     <Compile Include="ThànhTrung\Class\tblImports.cs" />
-    <Compile Include="tblProducts.cs" />
+    <Compile Include="Cảnh Hưng\Class\tblProducts.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,10 +159,10 @@
     <EmbeddedResource Include="ThànhTrung\Form\frmBillDetails.resx">
       <DependentUpon>frmBillDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmBills.resx">
+    <EmbeddedResource Include="Cảnh Hưng\Form\frmBills.resx">
       <DependentUpon>frmBills.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCategories.resx">
+    <EmbeddedResource Include="Cảnh Hưng\Form\frmCategories.resx">
       <DependentUpon>frmCategories.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MinhThiên\Form\frmCustomers.resx">
@@ -177,7 +177,7 @@
     <EmbeddedResource Include="ThànhTrung\Form\frmImports.resx">
       <DependentUpon>frmImports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmProducts.resx">
+    <EmbeddedResource Include="Cảnh Hưng\Form\frmProducts.resx">
       <DependentUpon>frmProducts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -261,6 +261,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\dee5f8d6-b00a-4a70-806d-f52e6fb6c882.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-image-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

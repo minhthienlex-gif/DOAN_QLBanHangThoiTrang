@@ -33,5 +33,8 @@ namespace DOAN_QLBanHangThoiTrang
         public string Address { get; set; }
 
         public DateTime? CreatedDate { get; set; }
+
+        [StringLength(200)]
+        public string EmployeeImage { get; set; }
     }
 }

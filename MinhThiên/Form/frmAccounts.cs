@@ -170,7 +170,7 @@ namespace DOAN_QLBanHangThoiTrang
                 {
                     Username = txtUsername.Text.Trim(),
                     Password = GetMD5(txtPassword.Text.Trim()),
-                    FullName = txtUsername.Text.Trim(),
+                    FullName = txtFullname.Text.Trim(),
                     Role = cbbRole.Text.Trim(),
                     Status = ckbStatus.Checked,
                     CreatedDate = dtpCreatedDate.Value,
@@ -189,7 +189,7 @@ namespace DOAN_QLBanHangThoiTrang
                 { 
                     accountsUpdate.Username = txtUsername.Text.Trim();
                     accountsUpdate.Password = GetMD5(txtPassword.Text.Trim());
-                    accountsUpdate.FullName = txtUsername.Text.Trim();
+                    accountsUpdate.FullName = txtFullname.Text.Trim();
                     accountsUpdate.Role = cbbRole.Text.Trim();
                     accountsUpdate.Status = ckbStatus.Checked;
                     accountsUpdate.CreatedDate = dtpCreatedDate.Value;

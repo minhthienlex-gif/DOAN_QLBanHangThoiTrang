@@ -93,6 +93,16 @@ namespace DOAN_QLBanHangThoiTrang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_image_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-image-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_bill_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-bill-50", resourceCulture);

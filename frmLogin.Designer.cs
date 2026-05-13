@@ -90,9 +90,9 @@
             // 
             this.panel1.BackgroundImage = global::DOAN_QLBanHangThoiTrang.Properties.Resources.dee5f8d6_b00a_4a70_806d_f52e6fb6c882;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(3, 4);
+            this.panel1.Location = new System.Drawing.Point(-5, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(437, 494);
+            this.panel1.Size = new System.Drawing.Size(445, 498);
             this.panel1.TabIndex = 7;
             // 
             // panel2

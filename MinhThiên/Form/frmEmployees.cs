@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,7 @@ namespace DOAN_QLBanHangThoiTrang
 {
     public partial class frmEmployees : Form
     {
+        string selectedImagePath = "";
         DataContext db = new DataContext();
         bool Addnew = false;
         public frmEmployees()
@@ -28,6 +31,7 @@ namespace DOAN_QLBanHangThoiTrang
             txtAddress.Enabled = check;
             txtGender.Enabled = check;
             dtpCreatedDate.Enabled = check;
+            picImage.Enabled = check;
             btnSave.Enabled = check;
             btnNotsaved.Enabled = check;
             btnAdd.Enabled = !check;
@@ -72,6 +76,28 @@ namespace DOAN_QLBanHangThoiTrang
             txtAddress.Text = dgvEmployees.Rows[i].Cells["Address"].Value.ToString();
             txtGender.Text = dgvEmployees.Rows[i].Cells["Gender"].Value.ToString();
             dtpCreatedDate.Value = Convert.ToDateTime(dgvEmployees.Rows[i].Cells["CreatedDate"].Value);
+
+            string imgPath = dgvEmployees.Rows[i].Cells["ImagePath"].Value?.ToString();
+            if (!string.IsNullOrEmpty(imgPath))
+            {
+                try
+                {
+                    string projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+                    string fullPath = Path.Combine(projectPath, imgPath);
+                    if (File.Exists(fullPath))
+                    {
+                        using (var stream = new FileStream(fullPath, FileMode.Open, FileAccess.Read))
+                        {
+                            if (picImage.Image != null) picImage.Image.Dispose();
+                            picImage.Image = Image.FromStream(stream);
+                            picImage.SizeMode = PictureBoxSizeMode.Zoom;
+                        }
+                    }
+                    else picImage.Image = null;
+                }
+                catch { picImage.Image = null; }
+            }
+            else picImage.Image = null;
         }
 
         private void btnNotsaved_Click(object sender, EventArgs e)
@@ -124,6 +150,7 @@ namespace DOAN_QLBanHangThoiTrang
             txtAddress.Clear();
             txtGender.Clear();
             dtpCreatedDate.Value = DateTime.Today;
+            picImage.Image = null;
             txtFullName.Focus();
         }
 
@@ -146,7 +173,8 @@ namespace DOAN_QLBanHangThoiTrang
                     BirthDate =  DateTime.Parse(txtBirthDate.Text.Trim()),
                     Address = txtAddress.Text.Trim(),
                     Gender = txtGender.Text.Trim(),
-                    CreatedDate = dtpCreatedDate.Value
+                    CreatedDate = dtpCreatedDate.Value,
+                    EmployeeImage = selectedImagePath
                 };
                 db.Employees.Add(newEmployees);
                 db.SaveChanges();
@@ -167,9 +195,53 @@ namespace DOAN_QLBanHangThoiTrang
                     employeesUpdate.Address = txtAddress.Text.Trim();
                     employeesUpdate.Gender = txtGender.Text.Trim();
                     employeesUpdate.CreatedDate = dtpCreatedDate.Value;
-
+                    if (!string.IsNullOrEmpty(selectedImagePath))
+                    {
+                        employeesUpdate.EmployeeImage = selectedImagePath;
+                    }
                     db.SaveChanges();
                     LoadGridData();
+                }
+            }
+        }
+
+        private void btnAddImage_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.gif; *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp";
+                ofd.Title = "Chọn ảnh cho sách";
+
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        using (var stream = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read))
+                        {
+                            if (picImage.Image != null) picImage.Image.Dispose();
+                            picImage.Image = Image.FromStream(stream);
+                        }
+                        picImage.SizeMode = PictureBoxSizeMode.Zoom;
+
+                        string projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+                        string folderPath = Path.Combine(projectPath, "images");
+
+                        if (!Directory.Exists(folderPath))
+                        {
+                            Directory.CreateDirectory(folderPath);
+                        }
+
+                        string extension = Path.GetExtension(ofd.FileName);
+                        string timestamp = DateTime.Now.ToString("yyyyMMddHHmmss");
+                        string uniqueFileName = timestamp + extension;
+                        string destPath = Path.Combine(folderPath, uniqueFileName);
+                        File.Copy(ofd.FileName, destPath, true);
+                        selectedImagePath = "images/" + uniqueFileName;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi khi xử lý ảnh: " + ex.Message);
+                    }
                 }
             }
         }

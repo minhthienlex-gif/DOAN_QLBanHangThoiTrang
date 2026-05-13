@@ -36,5 +36,7 @@ namespace DOAN_QLBanHangThoiTrang
         public string Description { get; set; }
 
         public DateTime CreatedDate { get; set; }
+        [StringLength(200)]
+        public string ProductImage { get; set; }
     }
 }

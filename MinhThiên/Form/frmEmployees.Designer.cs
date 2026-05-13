@@ -57,13 +57,17 @@
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CreatedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ImagePath = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnNotsaved = new Guna.UI2.WinForms.Guna2Button();
+            this.picImage = new System.Windows.Forms.PictureBox();
+            this.btnAddImage = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImage)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -73,7 +77,7 @@
             this.guna2GroupBox1.FillColor = System.Drawing.SystemColors.Control;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(27, 28);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(231, 28);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(773, 220);
             this.guna2GroupBox1.TabIndex = 1;
@@ -102,7 +106,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtBirthDate, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtPhone, 3, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(27, 71);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(231, 71);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -273,7 +277,7 @@
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconRight = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_search_50;
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.txtSearch.Location = new System.Drawing.Point(423, 268);
+            this.txtSearch.Location = new System.Drawing.Point(627, 281);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "";
@@ -285,7 +289,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 268);
+            this.label1.Location = new System.Drawing.Point(22, 281);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 28);
             this.label1.TabIndex = 38;
@@ -302,12 +306,13 @@
             this.BirthDate,
             this.Phone,
             this.Address,
-            this.CreatedDate});
-            this.dgvEmployees.Location = new System.Drawing.Point(27, 314);
+            this.CreatedDate,
+            this.ImagePath});
+            this.dgvEmployees.Location = new System.Drawing.Point(27, 325);
             this.dgvEmployees.Name = "dgvEmployees";
             this.dgvEmployees.RowHeadersWidth = 51;
             this.dgvEmployees.RowTemplate.Height = 24;
-            this.dgvEmployees.Size = new System.Drawing.Size(1049, 367);
+            this.dgvEmployees.Size = new System.Drawing.Size(1161, 367);
             this.dgvEmployees.TabIndex = 39;
             this.dgvEmployees.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmployees_CellEnter);
             // 
@@ -375,6 +380,14 @@
             this.CreatedDate.Name = "CreatedDate";
             this.CreatedDate.Width = 125;
             // 
+            // ImagePath
+            // 
+            this.ImagePath.DataPropertyName = "EmployeeImage";
+            this.ImagePath.HeaderText = "Ảnh";
+            this.ImagePath.MinimumWidth = 6;
+            this.ImagePath.Name = "ImagePath";
+            this.ImagePath.Width = 125;
+            // 
             // btnAdd
             // 
             this.btnAdd.BorderRadius = 15;
@@ -389,7 +402,7 @@
             this.btnAdd.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_add_48;
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdd.Location = new System.Drawing.Point(944, 28);
+            this.btnAdd.Location = new System.Drawing.Point(1056, 28);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(132, 40);
             this.btnAdd.TabIndex = 40;
@@ -411,7 +424,7 @@
             this.btnEdit.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_wrench_64;
             this.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEdit.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnEdit.Location = new System.Drawing.Point(944, 74);
+            this.btnEdit.Location = new System.Drawing.Point(1056, 74);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(132, 40);
             this.btnEdit.TabIndex = 41;
@@ -433,7 +446,7 @@
             this.btnDelete.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_delete_64;
             this.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDelete.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDelete.Location = new System.Drawing.Point(944, 120);
+            this.btnDelete.Location = new System.Drawing.Point(1056, 120);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(132, 40);
             this.btnDelete.TabIndex = 42;
@@ -455,7 +468,7 @@
             this.btnSave.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_save_40;
             this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(944, 166);
+            this.btnSave.Location = new System.Drawing.Point(1056, 166);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(132, 40);
             this.btnSave.TabIndex = 43;
@@ -477,7 +490,7 @@
             this.btnNotsaved.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_cancel_40;
             this.btnNotsaved.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNotsaved.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNotsaved.Location = new System.Drawing.Point(944, 212);
+            this.btnNotsaved.Location = new System.Drawing.Point(1056, 212);
             this.btnNotsaved.Name = "btnNotsaved";
             this.btnNotsaved.Size = new System.Drawing.Size(132, 40);
             this.btnNotsaved.TabIndex = 44;
@@ -485,10 +498,31 @@
             this.btnNotsaved.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnNotsaved.Click += new System.EventHandler(this.btnNotsaved_Click);
             // 
+            // picImage
+            // 
+            this.picImage.Location = new System.Drawing.Point(40, 28);
+            this.picImage.Name = "picImage";
+            this.picImage.Size = new System.Drawing.Size(157, 150);
+            this.picImage.TabIndex = 45;
+            this.picImage.TabStop = false;
+            // 
+            // btnAddImage
+            // 
+            this.btnAddImage.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAddImage.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_add_image_48;
+            this.btnAddImage.Location = new System.Drawing.Point(85, 188);
+            this.btnAddImage.Name = "btnAddImage";
+            this.btnAddImage.Size = new System.Drawing.Size(69, 60);
+            this.btnAddImage.TabIndex = 46;
+            this.btnAddImage.UseVisualStyleBackColor = false;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
+            // 
             // frmEmployees
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1133, 719);
+            this.ClientSize = new System.Drawing.Size(1210, 724);
+            this.Controls.Add(this.btnAddImage);
+            this.Controls.Add(this.picImage);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);
@@ -506,6 +540,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -533,6 +568,14 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvEmployees;
+        private System.Windows.Forms.TextBox txtPhone;
+        private Guna.UI2.WinForms.Guna2Button btnAdd;
+        private Guna.UI2.WinForms.Guna2Button btnEdit;
+        private Guna.UI2.WinForms.Guna2Button btnDelete;
+        private Guna.UI2.WinForms.Guna2Button btnSave;
+        private Guna.UI2.WinForms.Guna2Button btnNotsaved;
+        private System.Windows.Forms.PictureBox picImage;
+        private System.Windows.Forms.Button btnAddImage;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeID;
         private System.Windows.Forms.DataGridViewTextBoxColumn AccountID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
@@ -541,11 +584,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedDate;
-        private System.Windows.Forms.TextBox txtPhone;
-        private Guna.UI2.WinForms.Guna2Button btnAdd;
-        private Guna.UI2.WinForms.Guna2Button btnEdit;
-        private Guna.UI2.WinForms.Guna2Button btnDelete;
-        private Guna.UI2.WinForms.Guna2Button btnSave;
-        private Guna.UI2.WinForms.Guna2Button btnNotsaved;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ImagePath;
     }
 }

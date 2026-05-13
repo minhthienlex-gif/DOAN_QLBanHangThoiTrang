@@ -174,7 +174,7 @@
             // 
             this.txtEmployeeID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtEmployeeID.FormattingEnabled = true;
-            this.txtEmployeeID.Location = new System.Drawing.Point(156, 68);
+            this.txtEmployeeID.Location = new System.Drawing.Point(156, 70);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(243, 28);
             this.txtEmployeeID.TabIndex = 2;
@@ -183,7 +183,7 @@
             // 
             this.cbbCustomerID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbCustomerID.FormattingEnabled = true;
-            this.cbbCustomerID.Location = new System.Drawing.Point(601, 13);
+            this.cbbCustomerID.Location = new System.Drawing.Point(601, 15);
             this.cbbCustomerID.Name = "cbbCustomerID";
             this.cbbCustomerID.Size = new System.Drawing.Size(243, 28);
             this.cbbCustomerID.TabIndex = 2;
