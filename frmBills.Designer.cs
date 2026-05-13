@@ -40,6 +40,8 @@
             this.txtEmployeeID = new System.Windows.Forms.ComboBox();
             this.cbbCustomerID = new System.Windows.Forms.ComboBox();
             this.dtpBillDate = new System.Windows.Forms.DateTimePicker();
+            this.txtDiscountPercent = new System.Windows.Forms.TextBox();
+            this.txtTotalAmount = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvBills = new System.Windows.Forms.DataGridView();
             this.BillID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,8 +56,6 @@
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnNotsaved = new Guna.UI2.WinForms.Guna2Button();
-            this.txtDiscountPercent = new System.Windows.Forms.TextBox();
-            this.txtTotalAmount = new System.Windows.Forms.TextBox();
             this.guna2GroupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBills)).BeginInit();
@@ -174,7 +174,7 @@
             // 
             this.txtEmployeeID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtEmployeeID.FormattingEnabled = true;
-            this.txtEmployeeID.Location = new System.Drawing.Point(156, 70);
+            this.txtEmployeeID.Location = new System.Drawing.Point(156, 68);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(243, 28);
             this.txtEmployeeID.TabIndex = 2;
@@ -183,7 +183,7 @@
             // 
             this.cbbCustomerID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbCustomerID.FormattingEnabled = true;
-            this.cbbCustomerID.Location = new System.Drawing.Point(601, 15);
+            this.cbbCustomerID.Location = new System.Drawing.Point(601, 13);
             this.cbbCustomerID.Name = "cbbCustomerID";
             this.cbbCustomerID.Size = new System.Drawing.Size(243, 28);
             this.cbbCustomerID.TabIndex = 2;
@@ -197,6 +197,22 @@
             this.dtpBillDate.Name = "dtpBillDate";
             this.dtpBillDate.Size = new System.Drawing.Size(243, 27);
             this.dtpBillDate.TabIndex = 3;
+            // 
+            // txtDiscountPercent
+            // 
+            this.txtDiscountPercent.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtDiscountPercent.Location = new System.Drawing.Point(156, 124);
+            this.txtDiscountPercent.Name = "txtDiscountPercent";
+            this.txtDiscountPercent.Size = new System.Drawing.Size(243, 27);
+            this.txtDiscountPercent.TabIndex = 5;
+            // 
+            // txtTotalAmount
+            // 
+            this.txtTotalAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtTotalAmount.Location = new System.Drawing.Point(601, 124);
+            this.txtTotalAmount.Name = "txtTotalAmount";
+            this.txtTotalAmount.Size = new System.Drawing.Size(243, 27);
+            this.txtTotalAmount.TabIndex = 5;
             // 
             // label7
             // 
@@ -224,6 +240,7 @@
             this.dgvBills.RowTemplate.Height = 24;
             this.dgvBills.Size = new System.Drawing.Size(1130, 310);
             this.dgvBills.TabIndex = 39;
+            this.dgvBills.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBills_CellEnter);
             // 
             // BillID
             // 
@@ -315,6 +332,7 @@
             this.btnAdd.TabIndex = 44;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnEdit
             // 
@@ -336,6 +354,7 @@
             this.btnEdit.TabIndex = 45;
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -357,6 +376,7 @@
             this.btnDelete.TabIndex = 46;
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSave
             // 
@@ -378,6 +398,7 @@
             this.btnSave.TabIndex = 47;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnNotsaved
             // 
@@ -399,22 +420,7 @@
             this.btnNotsaved.TabIndex = 48;
             this.btnNotsaved.Text = "Not saved";
             this.btnNotsaved.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // txtDiscountPercent
-            // 
-            this.txtDiscountPercent.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtDiscountPercent.Location = new System.Drawing.Point(156, 124);
-            this.txtDiscountPercent.Name = "txtDiscountPercent";
-            this.txtDiscountPercent.Size = new System.Drawing.Size(243, 27);
-            this.txtDiscountPercent.TabIndex = 5;
-            // 
-            // txtTotalAmount
-            // 
-            this.txtTotalAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtTotalAmount.Location = new System.Drawing.Point(601, 124);
-            this.txtTotalAmount.Name = "txtTotalAmount";
-            this.txtTotalAmount.Size = new System.Drawing.Size(243, 27);
-            this.txtTotalAmount.TabIndex = 5;
+            this.btnNotsaved.Click += new System.EventHandler(this.btnNotsaved_Click);
             // 
             // frmBills
             // 
@@ -432,6 +438,7 @@
             this.Name = "frmBills";
             this.Text = "frmBills";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.frmBills_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

@@ -259,6 +259,9 @@
   <ItemGroup>
     <None Include="Resources\icons8-user-48.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dee5f8d6-b00a-4a70-806d-f52e6fb6c882.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

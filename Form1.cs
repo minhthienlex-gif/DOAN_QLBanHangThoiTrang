@@ -12,17 +12,21 @@ namespace DOAN_QLBanHangThoiTrang
 {
     public partial class frmMain : Form
     {
-        string Username, FullName, Role;
+        string Username, Fullname, Role;
         public frmMain()
         {
             InitializeComponent();
         }
-        public frmMain( string un, string ro)
+
+        public frmMain( string un,string fn, string ro)
         {
             InitializeComponent();
             Username = un;
+            Fullname = fn;
             Role = ro;
-            
+            this.Text = "Phần mềm quản lý bán hàng thời trang [" + Fullname + "]";
+
+
         }
     }
 }

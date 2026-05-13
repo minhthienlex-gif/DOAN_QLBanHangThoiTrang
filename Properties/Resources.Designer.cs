@@ -63,6 +63,16 @@ namespace DOAN_QLBanHangThoiTrang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dee5f8d6_b00a_4a70_806d_f52e6fb6c882 {
+            get {
+                object obj = ResourceManager.GetObject("dee5f8d6-b00a-4a70-806d-f52e6fb6c882", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_account_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-account-50", resourceCulture);

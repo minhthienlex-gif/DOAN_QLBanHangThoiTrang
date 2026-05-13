@@ -55,13 +55,12 @@
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-                this.mn1System,
-                this.mn1SystemManagement,
-                this.mn1ManageCategory,
-                this.mn1SalesManagement,
-                this.mn1Help});
+            this.mn1System,
+            this.mn1SystemManagement,
+            this.mn1ManageCategory,
+            this.mn1SalesManagement,
+            this.mn1Help});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1330, 33);

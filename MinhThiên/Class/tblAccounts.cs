@@ -21,6 +21,8 @@ namespace DOAN_QLBanHangThoiTrang
 
         [StringLength(100)]
         public string Password { get; set; }
+        [StringLength(100)]
+        public string FullName { get; set; }
 
         [StringLength(20)]
         public string Role { get; set; }
@@ -28,5 +30,8 @@ namespace DOAN_QLBanHangThoiTrang
         public bool Status { get; set; }
 
         public DateTime CreatedDate { get; set; }
+
+        [StringLength(200)]
+        public string Note { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace DOAN_QLBanHangThoiTrang
 
         [Required]
         [StringLength(200)]
-        public string ProductName { get; set; }
+        public string ProductTitle { get; set; }
 
         [StringLength(100)]
         public string BrandName { get; set; }

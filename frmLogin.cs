@@ -50,7 +50,7 @@ namespace DOAN_QLBanHangThoiTrang
                         MessageBox.Show("Tài khoản của bạn đang bị khóa");
                         return;
                     }
-                    frmMain fMain = new frmMain(account.Username, account.Role);
+                    frmMain fMain = new frmMain(account.Username,account.FullName, account.Role);
                     fMain.Show();
                     this.Hide();
                 }
@@ -60,5 +60,7 @@ namespace DOAN_QLBanHangThoiTrang
                 }
             }
         }
+
+     
     }
 }
