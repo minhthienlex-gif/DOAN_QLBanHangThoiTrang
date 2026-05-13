@@ -264,7 +264,7 @@
             // 
             this.cbbEmployeeID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbEmployeeID.FormattingEnabled = true;
-            this.cbbEmployeeID.Location = new System.Drawing.Point(537, 10);
+            this.cbbEmployeeID.Location = new System.Drawing.Point(537, 12);
             this.cbbEmployeeID.Name = "cbbEmployeeID";
             this.cbbEmployeeID.Size = new System.Drawing.Size(235, 28);
             this.cbbEmployeeID.TabIndex = 2;
@@ -374,7 +374,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(175, 380);
+            this.label7.Location = new System.Drawing.Point(175, 367);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(187, 28);
             this.label7.TabIndex = 44;
@@ -394,7 +394,7 @@
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconRight = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_search_50;
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.txtSearch.Location = new System.Drawing.Point(609, 380);
+            this.txtSearch.Location = new System.Drawing.Point(609, 367);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "";
@@ -414,7 +414,7 @@
             this.ImportDate,
             this.TotalAmount,
             this.Note});
-            this.dgvImport.Location = new System.Drawing.Point(173, 423);
+            this.dgvImport.Location = new System.Drawing.Point(173, 410);
             this.dgvImport.Name = "dgvImport";
             this.dgvImport.RowHeadersWidth = 51;
             this.dgvImport.RowTemplate.Height = 24;
@@ -428,6 +428,7 @@
             this.ImportID.HeaderText = "Mã phiếu nhập";
             this.ImportID.MinimumWidth = 6;
             this.ImportID.Name = "ImportID";
+            this.ImportID.Width = 125;
             // 
             // EmployeeID
             // 
@@ -435,6 +436,7 @@
             this.EmployeeID.HeaderText = "Mã nhân viên";
             this.EmployeeID.MinimumWidth = 6;
             this.EmployeeID.Name = "EmployeeID";
+            this.EmployeeID.Width = 125;
             // 
             // SupplierName
             // 
