@@ -68,7 +68,7 @@
             this.guna2GroupBox1.FillColor = System.Drawing.SystemColors.Control;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(143, 68);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(29, 24);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(876, 212);
             this.guna2GroupBox1.TabIndex = 0;
@@ -218,7 +218,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(138, 294);
+            this.label7.Location = new System.Drawing.Point(24, 250);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(179, 28);
             this.label7.TabIndex = 38;
@@ -226,6 +226,7 @@
             // 
             // dgvBills
             // 
+            this.dgvBills.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvBills.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBills.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.BillID,
@@ -234,7 +235,7 @@
             this.BillDate,
             this.DiscountPercent,
             this.TotalAmount});
-            this.dgvBills.Location = new System.Drawing.Point(143, 329);
+            this.dgvBills.Location = new System.Drawing.Point(29, 285);
             this.dgvBills.Name = "dgvBills";
             this.dgvBills.RowHeadersWidth = 51;
             this.dgvBills.RowTemplate.Height = 24;
@@ -304,7 +305,7 @@
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.IconRight = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_search_50;
             this.guna2TextBox1.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.guna2TextBox1.Location = new System.Drawing.Point(642, 294);
+            this.guna2TextBox1.Location = new System.Drawing.Point(528, 250);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PlaceholderText = "";
@@ -326,7 +327,7 @@
             this.btnAdd.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_add_48;
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdd.Location = new System.Drawing.Point(1141, 68);
+            this.btnAdd.Location = new System.Drawing.Point(1027, 24);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(132, 40);
             this.btnAdd.TabIndex = 44;
@@ -348,7 +349,7 @@
             this.btnEdit.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_wrench_64;
             this.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEdit.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnEdit.Location = new System.Drawing.Point(1141, 114);
+            this.btnEdit.Location = new System.Drawing.Point(1027, 70);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(132, 40);
             this.btnEdit.TabIndex = 45;
@@ -370,7 +371,7 @@
             this.btnDelete.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_delete_64;
             this.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDelete.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDelete.Location = new System.Drawing.Point(1141, 160);
+            this.btnDelete.Location = new System.Drawing.Point(1027, 116);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(132, 40);
             this.btnDelete.TabIndex = 46;
@@ -392,7 +393,7 @@
             this.btnSave.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_save_40;
             this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(1141, 206);
+            this.btnSave.Location = new System.Drawing.Point(1027, 162);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(132, 40);
             this.btnSave.TabIndex = 47;
@@ -414,7 +415,7 @@
             this.btnNotsaved.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_cancel_40;
             this.btnNotsaved.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNotsaved.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNotsaved.Location = new System.Drawing.Point(1141, 252);
+            this.btnNotsaved.Location = new System.Drawing.Point(1027, 208);
             this.btnNotsaved.Name = "btnNotsaved";
             this.btnNotsaved.Size = new System.Drawing.Size(132, 40);
             this.btnNotsaved.TabIndex = 48;
@@ -425,7 +426,7 @@
             // frmBills
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1458, 676);
+            this.ClientSize = new System.Drawing.Size(1200, 598);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);

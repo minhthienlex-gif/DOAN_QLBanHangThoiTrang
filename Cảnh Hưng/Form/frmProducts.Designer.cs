@@ -79,7 +79,7 @@
             this.guna2GroupBox1.FillColor = System.Drawing.SystemColors.Control;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(295, 38);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(217, 28);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(870, 310);
             this.guna2GroupBox1.TabIndex = 0;
@@ -272,7 +272,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(104, 368);
+            this.label9.Location = new System.Drawing.Point(26, 358);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(190, 28);
             this.label9.TabIndex = 38;
@@ -292,11 +292,11 @@
             this.Description,
             this.CreatedDate,
             this.ImagePath});
-            this.dgvProducts.Location = new System.Drawing.Point(102, 422);
+            this.dgvProducts.Location = new System.Drawing.Point(24, 412);
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.RowHeadersWidth = 51;
             this.dgvProducts.RowTemplate.Height = 24;
-            this.dgvProducts.Size = new System.Drawing.Size(1250, 421);
+            this.dgvProducts.Size = new System.Drawing.Size(1250, 287);
             this.dgvProducts.TabIndex = 39;
             this.dgvProducts.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProducts_CellEnter);
             // 
@@ -376,7 +376,7 @@
             // 
             this.btnAddImage.BackColor = System.Drawing.SystemColors.Control;
             this.btnAddImage.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_add_image_48;
-            this.btnAddImage.Location = new System.Drawing.Point(121, 205);
+            this.btnAddImage.Location = new System.Drawing.Point(77, 229);
             this.btnAddImage.Name = "btnAddImage";
             this.btnAddImage.Size = new System.Drawing.Size(68, 57);
             this.btnAddImage.TabIndex = 47;
@@ -385,9 +385,9 @@
             // 
             // picImage
             // 
-            this.picImage.Location = new System.Drawing.Point(83, 38);
+            this.picImage.Location = new System.Drawing.Point(31, 28);
             this.picImage.Name = "picImage";
-            this.picImage.Size = new System.Drawing.Size(157, 150);
+            this.picImage.Size = new System.Drawing.Size(171, 178);
             this.picImage.TabIndex = 46;
             this.picImage.TabStop = false;
             // 
@@ -405,7 +405,7 @@
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconRight = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_search_50;
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.txtSearch.Location = new System.Drawing.Point(592, 368);
+            this.txtSearch.Location = new System.Drawing.Point(710, 358);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "";
@@ -427,7 +427,7 @@
             this.btnAdd.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_add_48;
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdd.Location = new System.Drawing.Point(1220, 38);
+            this.btnAdd.Location = new System.Drawing.Point(1142, 28);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(132, 40);
             this.btnAdd.TabIndex = 32;
@@ -449,7 +449,7 @@
             this.btnEdit.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_wrench_64;
             this.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEdit.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnEdit.Location = new System.Drawing.Point(1220, 84);
+            this.btnEdit.Location = new System.Drawing.Point(1142, 74);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(132, 40);
             this.btnEdit.TabIndex = 33;
@@ -471,7 +471,7 @@
             this.btnDelete.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_delete_64;
             this.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDelete.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDelete.Location = new System.Drawing.Point(1220, 130);
+            this.btnDelete.Location = new System.Drawing.Point(1142, 120);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(132, 40);
             this.btnDelete.TabIndex = 34;
@@ -493,7 +493,7 @@
             this.btnSave.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_save_40;
             this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(1220, 176);
+            this.btnSave.Location = new System.Drawing.Point(1142, 166);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(132, 40);
             this.btnSave.TabIndex = 35;
@@ -515,7 +515,7 @@
             this.btnNotsaved.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_cancel_40;
             this.btnNotsaved.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNotsaved.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNotsaved.Location = new System.Drawing.Point(1220, 222);
+            this.btnNotsaved.Location = new System.Drawing.Point(1142, 212);
             this.btnNotsaved.Name = "btnNotsaved";
             this.btnNotsaved.Size = new System.Drawing.Size(132, 40);
             this.btnNotsaved.TabIndex = 36;
@@ -526,7 +526,7 @@
             // frmProducts
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1436, 843);
+            this.ClientSize = new System.Drawing.Size(1313, 713);
             this.Controls.Add(this.btnAddImage);
             this.Controls.Add(this.picImage);
             this.Controls.Add(this.dgvProducts);
@@ -540,7 +540,7 @@
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "frmProducts";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmProducts";
+            this.Text = "Quản lý sản phẩm";
             this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frmProducts_Load);
             this.guna2GroupBox1.ResumeLayout(false);

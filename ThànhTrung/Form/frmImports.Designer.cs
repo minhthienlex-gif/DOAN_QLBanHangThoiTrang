@@ -81,7 +81,7 @@
             this.btnAdd.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_add_48;
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdd.Location = new System.Drawing.Point(1228, 80);
+            this.btnAdd.Location = new System.Drawing.Point(1084, 22);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(132, 40);
             this.btnAdd.TabIndex = 37;
@@ -103,7 +103,7 @@
             this.btnEdit.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_wrench_64;
             this.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEdit.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnEdit.Location = new System.Drawing.Point(1228, 126);
+            this.btnEdit.Location = new System.Drawing.Point(1084, 68);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(132, 40);
             this.btnEdit.TabIndex = 38;
@@ -125,7 +125,7 @@
             this.btnDelete.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_delete_64;
             this.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDelete.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDelete.Location = new System.Drawing.Point(1228, 172);
+            this.btnDelete.Location = new System.Drawing.Point(1084, 114);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(132, 40);
             this.btnDelete.TabIndex = 39;
@@ -147,7 +147,7 @@
             this.btnSave.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_save_40;
             this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(1228, 218);
+            this.btnSave.Location = new System.Drawing.Point(1084, 160);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(132, 40);
             this.btnSave.TabIndex = 40;
@@ -169,7 +169,7 @@
             this.btnNotsaved.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_cancel_40;
             this.btnNotsaved.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNotsaved.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNotsaved.Location = new System.Drawing.Point(1228, 264);
+            this.btnNotsaved.Location = new System.Drawing.Point(1084, 206);
             this.btnNotsaved.Name = "btnNotsaved";
             this.btnNotsaved.Size = new System.Drawing.Size(132, 40);
             this.btnNotsaved.TabIndex = 41;
@@ -183,7 +183,7 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(173, 80);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(29, 22);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(813, 267);
             this.guna2GroupBox1.TabIndex = 42;
@@ -264,7 +264,7 @@
             // 
             this.cbbEmployeeID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbEmployeeID.FormattingEnabled = true;
-            this.cbbEmployeeID.Location = new System.Drawing.Point(537, 12);
+            this.cbbEmployeeID.Location = new System.Drawing.Point(537, 10);
             this.cbbEmployeeID.Name = "cbbEmployeeID";
             this.cbbEmployeeID.Size = new System.Drawing.Size(235, 28);
             this.cbbEmployeeID.TabIndex = 2;
@@ -374,7 +374,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(175, 367);
+            this.label7.Location = new System.Drawing.Point(31, 309);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(187, 28);
             this.label7.TabIndex = 44;
@@ -394,7 +394,7 @@
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconRight = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_search_50;
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.txtSearch.Location = new System.Drawing.Point(609, 367);
+            this.txtSearch.Location = new System.Drawing.Point(465, 309);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "";
@@ -404,6 +404,7 @@
             // 
             // dgvImport
             // 
+            this.dgvImport.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvImport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvImport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ImportID,
@@ -414,7 +415,7 @@
             this.ImportDate,
             this.TotalAmount,
             this.Note});
-            this.dgvImport.Location = new System.Drawing.Point(173, 410);
+            this.dgvImport.Location = new System.Drawing.Point(29, 352);
             this.dgvImport.Name = "dgvImport";
             this.dgvImport.RowHeadersWidth = 51;
             this.dgvImport.RowTemplate.Height = 24;
@@ -489,7 +490,7 @@
             // frmImports
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1442, 809);
+            this.ClientSize = new System.Drawing.Size(1253, 710);
             this.Controls.Add(this.dgvImport);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtSearch);

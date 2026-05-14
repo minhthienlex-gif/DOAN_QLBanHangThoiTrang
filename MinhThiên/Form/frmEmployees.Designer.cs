@@ -297,6 +297,7 @@
             // 
             // dgvEmployees
             // 
+            this.dgvEmployees.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmployeeID,
@@ -535,7 +536,6 @@
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "frmEmployees";
             this.Text = "frmEmployees";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmEmployees_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

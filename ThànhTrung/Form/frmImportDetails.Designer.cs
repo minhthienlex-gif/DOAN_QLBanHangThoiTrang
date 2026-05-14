@@ -68,7 +68,7 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(120, 55);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(24, 22);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(898, 189);
             this.guna2GroupBox1.TabIndex = 0;
@@ -190,7 +190,7 @@
             // 
             this.cbbImportID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbImportID.FormattingEnabled = true;
-            this.cbbImportID.Location = new System.Drawing.Point(591, 12);
+            this.cbbImportID.Location = new System.Drawing.Point(591, 10);
             this.cbbImportID.Name = "cbbImportID";
             this.cbbImportID.Size = new System.Drawing.Size(256, 28);
             this.cbbImportID.TabIndex = 3;
@@ -199,7 +199,7 @@
             // 
             this.cbbProductID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbProductID.FormattingEnabled = true;
-            this.cbbProductID.Location = new System.Drawing.Point(173, 61);
+            this.cbbProductID.Location = new System.Drawing.Point(173, 59);
             this.cbbProductID.Name = "cbbProductID";
             this.cbbProductID.Size = new System.Drawing.Size(256, 28);
             this.cbbProductID.TabIndex = 3;
@@ -216,7 +216,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(115, 279);
+            this.label7.Location = new System.Drawing.Point(19, 246);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(206, 28);
             this.label7.TabIndex = 38;
@@ -236,7 +236,7 @@
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconRight = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_search_50;
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.txtSearch.Location = new System.Drawing.Point(641, 279);
+            this.txtSearch.Location = new System.Drawing.Point(545, 246);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "";
@@ -246,6 +246,7 @@
             // 
             // dgvImportDetail
             // 
+            this.dgvImportDetail.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvImportDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvImportDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ImportDetailID,
@@ -254,7 +255,7 @@
             this.Quantity,
             this.Price,
             this.Total});
-            this.dgvImportDetail.Location = new System.Drawing.Point(120, 343);
+            this.dgvImportDetail.Location = new System.Drawing.Point(24, 310);
             this.dgvImportDetail.Name = "dgvImportDetail";
             this.dgvImportDetail.RowHeadersWidth = 51;
             this.dgvImportDetail.RowTemplate.Height = 24;
@@ -324,7 +325,7 @@
             this.btnAdd.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_add_48;
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdd.Location = new System.Drawing.Point(1159, 55);
+            this.btnAdd.Location = new System.Drawing.Point(1063, 22);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(132, 40);
             this.btnAdd.TabIndex = 44;
@@ -346,7 +347,7 @@
             this.btnEdit.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_wrench_64;
             this.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEdit.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnEdit.Location = new System.Drawing.Point(1159, 101);
+            this.btnEdit.Location = new System.Drawing.Point(1063, 68);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(132, 40);
             this.btnEdit.TabIndex = 45;
@@ -368,7 +369,7 @@
             this.btnDelete.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_delete_64;
             this.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDelete.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDelete.Location = new System.Drawing.Point(1159, 147);
+            this.btnDelete.Location = new System.Drawing.Point(1063, 114);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(132, 40);
             this.btnDelete.TabIndex = 46;
@@ -390,7 +391,7 @@
             this.btnSave.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_save_40;
             this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(1159, 193);
+            this.btnSave.Location = new System.Drawing.Point(1063, 160);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(132, 40);
             this.btnSave.TabIndex = 47;
@@ -412,7 +413,7 @@
             this.btnNotsaved.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_cancel_40;
             this.btnNotsaved.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNotsaved.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNotsaved.Location = new System.Drawing.Point(1159, 239);
+            this.btnNotsaved.Location = new System.Drawing.Point(1063, 206);
             this.btnNotsaved.Name = "btnNotsaved";
             this.btnNotsaved.Size = new System.Drawing.Size(132, 40);
             this.btnNotsaved.TabIndex = 48;
@@ -423,7 +424,7 @@
             // frmImportDetails
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1457, 736);
+            this.ClientSize = new System.Drawing.Size(1224, 682);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnDelete);

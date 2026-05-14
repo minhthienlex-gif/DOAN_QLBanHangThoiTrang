@@ -44,9 +44,6 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.dtpCreatedDate = new System.Windows.Forms.DateTimePicker();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dgvAccounts = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.ckbStatus = new System.Windows.Forms.CheckBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -54,6 +51,9 @@
             this.cbbRole = new System.Windows.Forms.ComboBox();
             this.txtFullname = new System.Windows.Forms.TextBox();
             this.txtNote = new System.Windows.Forms.TextBox();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dgvAccounts = new System.Windows.Forms.DataGridView();
             this.AccountID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,7 +83,7 @@
             this.btnAdd.Location = new System.Drawing.Point(1136, 36);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(132, 40);
-            this.btnAdd.TabIndex = 32;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add";
             this.btnAdd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -105,7 +105,7 @@
             this.btnEdit.Location = new System.Drawing.Point(1136, 82);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(132, 40);
-            this.btnEdit.TabIndex = 33;
+            this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "Edit";
             this.btnEdit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -127,7 +127,7 @@
             this.btnDelete.Location = new System.Drawing.Point(1136, 128);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(132, 40);
-            this.btnDelete.TabIndex = 34;
+            this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -149,7 +149,7 @@
             this.btnSave.Location = new System.Drawing.Point(1136, 174);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(132, 40);
-            this.btnSave.TabIndex = 35;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -171,7 +171,7 @@
             this.btnNotsaved.Location = new System.Drawing.Point(1136, 220);
             this.btnNotsaved.Name = "btnNotsaved";
             this.btnNotsaved.Size = new System.Drawing.Size(132, 40);
-            this.btnNotsaved.TabIndex = 36;
+            this.btnNotsaved.TabIndex = 7;
             this.btnNotsaved.Text = "Not saved";
             this.btnNotsaved.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btnNotsaved.Click += new System.EventHandler(this.btnNotsaved_Click);
@@ -185,7 +185,7 @@
             this.guna2GroupBox1.Location = new System.Drawing.Point(61, 36);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(805, 204);
-            this.guna2GroupBox1.TabIndex = 37;
+            this.guna2GroupBox1.TabIndex = 0;
             this.guna2GroupBox1.Text = "Thông tin tài khoản";
             // 
             // tableLayoutPanel1
@@ -228,7 +228,7 @@
             this.label2.Location = new System.Drawing.Point(3, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 16);
-            this.label2.TabIndex = 0;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Mã tài khoản";
             // 
             // label4
@@ -238,7 +238,7 @@
             this.label4.Location = new System.Drawing.Point(3, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 16);
-            this.label4.TabIndex = 0;
+            this.label4.TabIndex = 3;
             this.label4.Text = "Mật khẩu";
             // 
             // label3
@@ -248,7 +248,7 @@
             this.label3.Location = new System.Drawing.Point(403, 12);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 16);
-            this.label3.TabIndex = 0;
+            this.label3.TabIndex = 9;
             this.label3.Text = "Tên đăng nhập";
             // 
             // label6
@@ -258,7 +258,7 @@
             this.label6.Location = new System.Drawing.Point(403, 92);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 16);
-            this.label6.TabIndex = 0;
+            this.label6.TabIndex = 13;
             this.label6.Text = "Ngày tạo tài khoản";
             // 
             // label1
@@ -268,7 +268,7 @@
             this.label1.Location = new System.Drawing.Point(403, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 16);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 11;
             this.label1.Text = "Người tạo tài khoản";
             // 
             // txtAccountID
@@ -277,7 +277,7 @@
             this.txtAccountID.Location = new System.Drawing.Point(150, 9);
             this.txtAccountID.Name = "txtAccountID";
             this.txtAccountID.Size = new System.Drawing.Size(210, 22);
-            this.txtAccountID.TabIndex = 1;
+            this.txtAccountID.TabIndex = 2;
             // 
             // txtPassword
             // 
@@ -285,7 +285,7 @@
             this.txtPassword.Location = new System.Drawing.Point(150, 49);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(210, 22);
-            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabIndex = 4;
             // 
             // txtUsername
             // 
@@ -293,7 +293,7 @@
             this.txtUsername.Location = new System.Drawing.Point(540, 9);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(210, 22);
-            this.txtUsername.TabIndex = 1;
+            this.txtUsername.TabIndex = 10;
             // 
             // dtpCreatedDate
             // 
@@ -303,7 +303,73 @@
             this.dtpCreatedDate.Location = new System.Drawing.Point(540, 89);
             this.dtpCreatedDate.Name = "dtpCreatedDate";
             this.dtpCreatedDate.Size = new System.Drawing.Size(210, 22);
-            this.dtpCreatedDate.TabIndex = 2;
+            this.dtpCreatedDate.TabIndex = 14;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 133);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 16);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Trạng thái";
+            // 
+            // ckbStatus
+            // 
+            this.ckbStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.ckbStatus.AutoSize = true;
+            this.ckbStatus.Location = new System.Drawing.Point(150, 131);
+            this.ckbStatus.Name = "ckbStatus";
+            this.ckbStatus.Size = new System.Drawing.Size(116, 20);
+            this.ckbStatus.TabIndex = 8;
+            this.ckbStatus.Text = "Khóa/Mở khóa";
+            this.ckbStatus.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(403, 133);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(51, 16);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Ghi chú";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 92);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 16);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Quyền";
+            // 
+            // cbbRole
+            // 
+            this.cbbRole.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbbRole.FormattingEnabled = true;
+            this.cbbRole.Location = new System.Drawing.Point(150, 88);
+            this.cbbRole.Name = "cbbRole";
+            this.cbbRole.Size = new System.Drawing.Size(210, 24);
+            this.cbbRole.TabIndex = 6;
+            // 
+            // txtFullname
+            // 
+            this.txtFullname.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtFullname.Location = new System.Drawing.Point(540, 49);
+            this.txtFullname.Name = "txtFullname";
+            this.txtFullname.Size = new System.Drawing.Size(210, 22);
+            this.txtFullname.TabIndex = 12;
+            // 
+            // txtNote
+            // 
+            this.txtNote.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.txtNote.Location = new System.Drawing.Point(540, 130);
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(210, 22);
+            this.txtNote.TabIndex = 1;
             // 
             // txtSearch
             // 
@@ -325,7 +391,7 @@
             this.txtSearch.PlaceholderText = "";
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(377, 28);
-            this.txtSearch.TabIndex = 38;
+            this.txtSearch.TabIndex = 1;
             // 
             // label7
             // 
@@ -334,11 +400,12 @@
             this.label7.Location = new System.Drawing.Point(62, 266);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(187, 28);
-            this.label7.TabIndex = 39;
+            this.label7.TabIndex = 1;
             this.label7.Text = "Danh sách tài khoản";
             // 
             // dgvAccounts
             // 
+            this.dgvAccounts.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAccounts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AccountID,
@@ -354,74 +421,8 @@
             this.dgvAccounts.RowHeadersWidth = 51;
             this.dgvAccounts.RowTemplate.Height = 24;
             this.dgvAccounts.Size = new System.Drawing.Size(1253, 396);
-            this.dgvAccounts.TabIndex = 40;
+            this.dgvAccounts.TabIndex = 2;
             this.dgvAccounts.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAccounts_CellEnter);
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 133);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 16);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Trạng thái";
-            // 
-            // ckbStatus
-            // 
-            this.ckbStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ckbStatus.AutoSize = true;
-            this.ckbStatus.Location = new System.Drawing.Point(150, 131);
-            this.ckbStatus.Name = "ckbStatus";
-            this.ckbStatus.Size = new System.Drawing.Size(116, 20);
-            this.ckbStatus.TabIndex = 4;
-            this.ckbStatus.Text = "Khóa/Mở khóa";
-            this.ckbStatus.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(403, 133);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(51, 16);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Ghi chú";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 92);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 16);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Quyền";
-            // 
-            // cbbRole
-            // 
-            this.cbbRole.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.cbbRole.FormattingEnabled = true;
-            this.cbbRole.Location = new System.Drawing.Point(150, 88);
-            this.cbbRole.Name = "cbbRole";
-            this.cbbRole.Size = new System.Drawing.Size(210, 24);
-            this.cbbRole.TabIndex = 3;
-            // 
-            // txtFullname
-            // 
-            this.txtFullname.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtFullname.Location = new System.Drawing.Point(540, 49);
-            this.txtFullname.Name = "txtFullname";
-            this.txtFullname.Size = new System.Drawing.Size(210, 22);
-            this.txtFullname.TabIndex = 1;
-            // 
-            // txtNote
-            // 
-            this.txtNote.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtNote.Location = new System.Drawing.Point(540, 130);
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(210, 22);
-            this.txtNote.TabIndex = 1;
             // 
             // AccountID
             // 
@@ -490,7 +491,7 @@
             // frmAccounts
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1367, 777);
+            this.ClientSize = new System.Drawing.Size(1367, 750);
             this.Controls.Add(this.dgvAccounts);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtSearch);
@@ -502,8 +503,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnNotsaved);
             this.Name = "frmAccounts";
-            this.Text = "frmAccounts";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Text = "Quản lý tài khoản";
             this.Load += new System.EventHandler(this.frmAccounts_Load);
             this.Click += new System.EventHandler(this.frmAccounts_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
