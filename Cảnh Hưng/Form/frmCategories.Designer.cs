@@ -336,8 +336,7 @@
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "frmCategories";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCategories";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Text = "Quán lý loại sản phẩm";
             this.Load += new System.EventHandler(this.frmCategories_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

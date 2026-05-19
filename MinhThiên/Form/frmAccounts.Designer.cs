@@ -503,6 +503,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnNotsaved);
             this.Name = "frmAccounts";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý tài khoản";
             this.Load += new System.EventHandler(this.frmAccounts_Load);
             this.Click += new System.EventHandler(this.frmAccounts_Load);

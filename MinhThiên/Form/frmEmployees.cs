@@ -37,6 +37,7 @@ namespace DOAN_QLBanHangThoiTrang
             btnAdd.Enabled = !check;
             btnEdit.Enabled = !check;
             btnDelete.Enabled = !check;
+            btnAddImage.Enabled = check;
             dgvEmployees.Enabled = !check;
         }
         private void LoadAccount()
@@ -70,7 +71,7 @@ namespace DOAN_QLBanHangThoiTrang
             if (i < 0) return;
             txtEmployeeID.Text = dgvEmployees.Rows[i].Cells["EmployeeID"].Value.ToString();
             txtFullName.Text = dgvEmployees.Rows[i].Cells["Fullname"].Value.ToString();
-            cbbAccountID.Text = dgvEmployees.Rows[i].Cells["AccountID"].Value.ToString();
+            cbbAccountID.SelectedValue = dgvEmployees.Rows[i].Cells["AccountID"].Value;
             txtPhone.Text = dgvEmployees.Rows[i].Cells["Phone"].Value.ToString();
             txtBirthDate.Text = dgvEmployees.Rows[i].Cells["BirthDate"].Value.ToString();
             txtAddress.Text = dgvEmployees.Rows[i].Cells["Address"].Value.ToString();
@@ -78,6 +79,7 @@ namespace DOAN_QLBanHangThoiTrang
             dtpCreatedDate.Value = Convert.ToDateTime(dgvEmployees.Rows[i].Cells["CreatedDate"].Value);
 
             string imgPath = dgvEmployees.Rows[i].Cells["ImagePath"].Value?.ToString();
+            selectedImagePath = imgPath ?? "";
             if (!string.IsNullOrEmpty(imgPath))
             {
                 try

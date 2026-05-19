@@ -70,6 +70,7 @@ namespace DOAN_QLBanHangThoiTrang
             loginForm.Show();
         }
 
+
         public frmMain()
         {
             InitializeComponent();
@@ -82,7 +83,6 @@ namespace DOAN_QLBanHangThoiTrang
             Fullname = fn;
             Role = ro;
             this.Text = "Phần mềm quản lý bán hàng thời trang [" + Fullname + "]";
-
 
         }
     }

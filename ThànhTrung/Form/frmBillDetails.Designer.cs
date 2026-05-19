@@ -435,8 +435,8 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "frmBillDetails";
-            this.Text = "frmBillDetails";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản lý chi tiết hóa đơn";
             this.Load += new System.EventHandler(this.frmBillDetails_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

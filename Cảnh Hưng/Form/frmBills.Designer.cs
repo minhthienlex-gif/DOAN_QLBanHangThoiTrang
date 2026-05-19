@@ -174,7 +174,7 @@
             // 
             this.txtEmployeeID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtEmployeeID.FormattingEnabled = true;
-            this.txtEmployeeID.Location = new System.Drawing.Point(156, 70);
+            this.txtEmployeeID.Location = new System.Drawing.Point(156, 68);
             this.txtEmployeeID.Name = "txtEmployeeID";
             this.txtEmployeeID.Size = new System.Drawing.Size(243, 28);
             this.txtEmployeeID.TabIndex = 2;
@@ -183,7 +183,7 @@
             // 
             this.cbbCustomerID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbCustomerID.FormattingEnabled = true;
-            this.cbbCustomerID.Location = new System.Drawing.Point(601, 15);
+            this.cbbCustomerID.Location = new System.Drawing.Point(601, 13);
             this.cbbCustomerID.Name = "cbbCustomerID";
             this.cbbCustomerID.Size = new System.Drawing.Size(243, 28);
             this.cbbCustomerID.TabIndex = 2;
@@ -437,8 +437,8 @@
             this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "frmBills";
-            this.Text = "frmBills";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản lý hóa đơn";
             this.Load += new System.EventHandler(this.frmBills_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

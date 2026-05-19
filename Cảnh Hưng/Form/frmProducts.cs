@@ -31,15 +31,13 @@ namespace DOAN_QLBanHangThoiTrang
             txtDescription.Enabled = check;
             dtpCreatedDate.Enabled = true;
             picImage.Enabled = check;
-            // Nhóm nút lệnh
             btnSave.Enabled = check;
             btnNotsaved.Enabled = check;
 
+            btnAddImage.Enabled = check;
             btnAdd.Enabled = !check;
             btnEdit.Enabled = !check;
             btnDelete.Enabled = !check;
-
-            // Lưới dữ liệu
             dgvProducts.Enabled = !check;
         }
         private void LoadCategoryComboBox()
@@ -60,7 +58,8 @@ namespace DOAN_QLBanHangThoiTrang
                            p.Price,
                            p.Quantity,
                            p.Description,
-                           p.CreatedDate
+                           p.CreatedDate,
+                           p.ProductImage
                        };
 
             dgvProducts.DataSource = data.ToList();
@@ -176,7 +175,7 @@ namespace DOAN_QLBanHangThoiTrang
                 p.Description = txtDescription.Text;
                 p.CategoryID = (int)cbbCategoryID.SelectedValue;
                 p.CreatedDate = DateTime.Now;
-
+                p.ProductImage = selectedImagePath;
                 db.products.Add(p);
             }
             else

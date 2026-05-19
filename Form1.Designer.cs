@@ -125,7 +125,7 @@
             // 
             this.mn2Account.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_account_50;
             this.mn2Account.Name = "mn2Account";
-            this.mn2Account.Size = new System.Drawing.Size(224, 30);
+            this.mn2Account.Size = new System.Drawing.Size(177, 30);
             this.mn2Account.Text = "Tài khoản";
             this.mn2Account.Click += new System.EventHandler(this.mn2Account_Click);
             // 
@@ -133,7 +133,7 @@
             // 
             this.mn2Employee.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_manager_50;
             this.mn2Employee.Name = "mn2Employee";
-            this.mn2Employee.Size = new System.Drawing.Size(224, 30);
+            this.mn2Employee.Size = new System.Drawing.Size(177, 30);
             this.mn2Employee.Text = "Nhân viên";
             this.mn2Employee.Click += new System.EventHandler(this.mn2Employee_Click);
             // 
@@ -151,7 +151,7 @@
             // 
             this.mn2Product.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_product_48;
             this.mn2Product.Name = "mn2Product";
-            this.mn2Product.Size = new System.Drawing.Size(224, 30);
+            this.mn2Product.Size = new System.Drawing.Size(213, 30);
             this.mn2Product.Text = "Sản phẩm";
             this.mn2Product.Click += new System.EventHandler(this.mn2Product_Click);
             // 
@@ -159,7 +159,7 @@
             // 
             this.mn2Categorie.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_management_48;
             this.mn2Categorie.Name = "mn2Categorie";
-            this.mn2Categorie.Size = new System.Drawing.Size(224, 30);
+            this.mn2Categorie.Size = new System.Drawing.Size(213, 30);
             this.mn2Categorie.Text = "Loại sản phẩm";
             this.mn2Categorie.Click += new System.EventHandler(this.mn2Categorie_Click);
             // 
@@ -167,7 +167,7 @@
             // 
             this.mn2Customer.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_user_groups_48;
             this.mn2Customer.Name = "mn2Customer";
-            this.mn2Customer.Size = new System.Drawing.Size(224, 30);
+            this.mn2Customer.Size = new System.Drawing.Size(213, 30);
             this.mn2Customer.Text = "Khách hàng ";
             this.mn2Customer.Click += new System.EventHandler(this.mn2Customer_Click);
             // 

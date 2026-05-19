@@ -264,7 +264,7 @@
             // 
             this.cbbEmployeeID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbEmployeeID.FormattingEnabled = true;
-            this.cbbEmployeeID.Location = new System.Drawing.Point(537, 10);
+            this.cbbEmployeeID.Location = new System.Drawing.Point(537, 12);
             this.cbbEmployeeID.Name = "cbbEmployeeID";
             this.cbbEmployeeID.Size = new System.Drawing.Size(235, 28);
             this.cbbEmployeeID.TabIndex = 2;
@@ -501,8 +501,8 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnNotsaved);
             this.Name = "frmImports";
-            this.Text = "frmImports";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản lý phiếu nhập";
             this.Load += new System.EventHandler(this.frmImports_Load);
             this.guna2GroupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);

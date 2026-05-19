@@ -535,7 +535,8 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "frmEmployees";
-            this.Text = "frmEmployees";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Quản lý khách hàng";
             this.Load += new System.EventHandler(this.frmEmployees_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
