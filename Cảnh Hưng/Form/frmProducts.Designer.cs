@@ -152,7 +152,7 @@
             // 
             this.cbbCategoryID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbCategoryID.FormattingEnabled = true;
-            this.cbbCategoryID.Location = new System.Drawing.Point(580, 8);
+            this.cbbCategoryID.Location = new System.Drawing.Point(580, 10);
             this.cbbCategoryID.Name = "cbbCategoryID";
             this.cbbCategoryID.Size = new System.Drawing.Size(235, 28);
             this.cbbCategoryID.TabIndex = 37;
