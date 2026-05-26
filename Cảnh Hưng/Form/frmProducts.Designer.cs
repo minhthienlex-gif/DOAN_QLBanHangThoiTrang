@@ -152,7 +152,7 @@
             // 
             this.cbbCategoryID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbCategoryID.FormattingEnabled = true;
-            this.cbbCategoryID.Location = new System.Drawing.Point(580, 10);
+            this.cbbCategoryID.Location = new System.Drawing.Point(580, 8);
             this.cbbCategoryID.Name = "cbbCategoryID";
             this.cbbCategoryID.Size = new System.Drawing.Size(235, 28);
             this.cbbCategoryID.TabIndex = 37;
@@ -412,6 +412,7 @@
             this.txtSearch.SelectedText = "";
             this.txtSearch.Size = new System.Drawing.Size(377, 28);
             this.txtSearch.TabIndex = 37;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnAdd
             // 

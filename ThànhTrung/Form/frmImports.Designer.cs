@@ -81,7 +81,7 @@
             this.btnAdd.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_add_48;
             this.btnAdd.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdd.Location = new System.Drawing.Point(1084, 22);
+            this.btnAdd.Location = new System.Drawing.Point(1206, 24);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(132, 40);
             this.btnAdd.TabIndex = 37;
@@ -103,7 +103,7 @@
             this.btnEdit.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_wrench_64;
             this.btnEdit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnEdit.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnEdit.Location = new System.Drawing.Point(1084, 68);
+            this.btnEdit.Location = new System.Drawing.Point(1206, 70);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(132, 40);
             this.btnEdit.TabIndex = 38;
@@ -125,7 +125,7 @@
             this.btnDelete.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_delete_64;
             this.btnDelete.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnDelete.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnDelete.Location = new System.Drawing.Point(1084, 114);
+            this.btnDelete.Location = new System.Drawing.Point(1206, 116);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(132, 40);
             this.btnDelete.TabIndex = 39;
@@ -147,7 +147,7 @@
             this.btnSave.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_save_40;
             this.btnSave.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(1084, 160);
+            this.btnSave.Location = new System.Drawing.Point(1206, 162);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(132, 40);
             this.btnSave.TabIndex = 40;
@@ -169,7 +169,7 @@
             this.btnNotsaved.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_cancel_40;
             this.btnNotsaved.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnNotsaved.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNotsaved.Location = new System.Drawing.Point(1084, 206);
+            this.btnNotsaved.Location = new System.Drawing.Point(1206, 208);
             this.btnNotsaved.Name = "btnNotsaved";
             this.btnNotsaved.Size = new System.Drawing.Size(132, 40);
             this.btnNotsaved.TabIndex = 41;
@@ -183,9 +183,9 @@
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.SystemColors.ActiveCaption;
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(29, 22);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(157, 24);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
-            this.guna2GroupBox1.Size = new System.Drawing.Size(813, 267);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(879, 267);
             this.guna2GroupBox1.TabIndex = 42;
             this.guna2GroupBox1.Text = "Thông tin phiếu nhập";
             // 
@@ -193,9 +193,9 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.91358F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.96296F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.04938F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.07407F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.21918F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.55251F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.56165F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
@@ -219,7 +219,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.26891F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.26891F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.19328F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(813, 224);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(876, 224);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -246,7 +246,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(407, 14);
+            this.label3.Location = new System.Drawing.Point(440, 14);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 20);
             this.label3.TabIndex = 0;
@@ -255,18 +255,18 @@
             // txtImportID
             // 
             this.txtImportID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtImportID.Location = new System.Drawing.Point(140, 11);
+            this.txtImportID.Location = new System.Drawing.Point(150, 11);
             this.txtImportID.Name = "txtImportID";
-            this.txtImportID.Size = new System.Drawing.Size(235, 27);
+            this.txtImportID.Size = new System.Drawing.Size(249, 27);
             this.txtImportID.TabIndex = 1;
             // 
             // cbbEmployeeID
             // 
             this.cbbEmployeeID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbEmployeeID.FormattingEnabled = true;
-            this.cbbEmployeeID.Location = new System.Drawing.Point(537, 12);
+            this.cbbEmployeeID.Location = new System.Drawing.Point(584, 12);
             this.cbbEmployeeID.Name = "cbbEmployeeID";
-            this.cbbEmployeeID.Size = new System.Drawing.Size(235, 28);
+            this.cbbEmployeeID.Size = new System.Drawing.Size(255, 28);
             this.cbbEmployeeID.TabIndex = 2;
             // 
             // dtpImportDate
@@ -274,9 +274,9 @@
             this.dtpImportDate.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dtpImportDate.CustomFormat = "dd/MM/yyyy";
             this.dtpImportDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpImportDate.Location = new System.Drawing.Point(140, 60);
+            this.dtpImportDate.Location = new System.Drawing.Point(150, 60);
             this.dtpImportDate.Name = "dtpImportDate";
-            this.dtpImportDate.Size = new System.Drawing.Size(235, 27);
+            this.dtpImportDate.Size = new System.Drawing.Size(249, 27);
             this.dtpImportDate.TabIndex = 3;
             // 
             // label4
@@ -292,16 +292,16 @@
             // txtTotalAmount
             // 
             this.txtTotalAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtTotalAmount.Location = new System.Drawing.Point(140, 172);
+            this.txtTotalAmount.Location = new System.Drawing.Point(150, 172);
             this.txtTotalAmount.Name = "txtTotalAmount";
-            this.txtTotalAmount.Size = new System.Drawing.Size(235, 27);
+            this.txtTotalAmount.Size = new System.Drawing.Size(249, 27);
             this.txtTotalAmount.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(407, 175);
+            this.label5.Location = new System.Drawing.Point(440, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 20);
             this.label5.TabIndex = 0;
@@ -311,7 +311,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(407, 102);
+            this.label6.Location = new System.Drawing.Point(440, 102);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(123, 40);
             this.label6.TabIndex = 0;
@@ -321,7 +321,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(407, 63);
+            this.label8.Location = new System.Drawing.Point(440, 63);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(124, 20);
             this.label8.TabIndex = 0;
@@ -340,34 +340,34 @@
             // txtSupplierPhone
             // 
             this.txtSupplierPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSupplierPhone.Location = new System.Drawing.Point(140, 109);
+            this.txtSupplierPhone.Location = new System.Drawing.Point(150, 109);
             this.txtSupplierPhone.Name = "txtSupplierPhone";
-            this.txtSupplierPhone.Size = new System.Drawing.Size(235, 27);
+            this.txtSupplierPhone.Size = new System.Drawing.Size(249, 27);
             this.txtSupplierPhone.TabIndex = 1;
             // 
             // txtSupplierName
             // 
             this.txtSupplierName.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSupplierName.Location = new System.Drawing.Point(537, 60);
+            this.txtSupplierName.Location = new System.Drawing.Point(584, 60);
             this.txtSupplierName.Name = "txtSupplierName";
-            this.txtSupplierName.Size = new System.Drawing.Size(235, 27);
+            this.txtSupplierName.Size = new System.Drawing.Size(255, 27);
             this.txtSupplierName.TabIndex = 1;
             // 
             // txtSupplierAddress
             // 
             this.txtSupplierAddress.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtSupplierAddress.Location = new System.Drawing.Point(537, 109);
+            this.txtSupplierAddress.Location = new System.Drawing.Point(584, 109);
             this.txtSupplierAddress.Name = "txtSupplierAddress";
-            this.txtSupplierAddress.Size = new System.Drawing.Size(235, 27);
+            this.txtSupplierAddress.Size = new System.Drawing.Size(255, 27);
             this.txtSupplierAddress.TabIndex = 1;
             // 
             // txtNote
             // 
             this.txtNote.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtNote.Location = new System.Drawing.Point(537, 153);
+            this.txtNote.Location = new System.Drawing.Point(584, 153);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(235, 65);
+            this.txtNote.Size = new System.Drawing.Size(255, 65);
             this.txtNote.TabIndex = 1;
             // 
             // label7
@@ -394,13 +394,14 @@
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.IconRight = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_search_50;
             this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.txtSearch.Location = new System.Drawing.Point(465, 309);
+            this.txtSearch.Location = new System.Drawing.Point(590, 309);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PlaceholderText = "";
             this.txtSearch.SelectedText = "";
-            this.txtSearch.Size = new System.Drawing.Size(377, 28);
+            this.txtSearch.Size = new System.Drawing.Size(446, 28);
             this.txtSearch.TabIndex = 43;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dgvImport
             // 
@@ -419,7 +420,7 @@
             this.dgvImport.Name = "dgvImport";
             this.dgvImport.RowHeadersWidth = 51;
             this.dgvImport.RowTemplate.Height = 24;
-            this.dgvImport.Size = new System.Drawing.Size(1202, 353);
+            this.dgvImport.Size = new System.Drawing.Size(1427, 353);
             this.dgvImport.TabIndex = 45;
             this.dgvImport.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvImport_CellEnter);
             // 
@@ -490,7 +491,7 @@
             // frmImports
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(1253, 710);
+            this.ClientSize = new System.Drawing.Size(1492, 710);
             this.Controls.Add(this.dgvImport);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtSearch);

@@ -191,5 +191,26 @@ namespace DOAN_QLBanHangThoiTrang
                 }
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim().ToLower();
+
+            var data = db.Imports
+                        .ToList()
+                        .Where(i =>
+                            i.ImportID.ToString().Contains(keyword) ||
+                            i.EmployeeID.ToString().Contains(keyword) ||
+                            i.SupplierName.ToLower().Contains(keyword) ||
+                            i.SupplierPhone.Contains(keyword) ||
+                            i.SupplierAddress.ToLower().Contains(keyword) ||
+                            i.Note.ToLower().Contains(keyword) ||
+                            i.TotalAmount.ToString().Contains(keyword) ||
+                            i.ImportDate.ToString("dd/MM/yyyy").Contains(keyword)
+                        )
+                        .ToList();
+
+            dgvImport.DataSource = data;
+        }
     }
 }

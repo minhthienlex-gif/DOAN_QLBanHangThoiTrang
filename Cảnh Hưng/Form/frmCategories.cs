@@ -155,7 +155,26 @@ namespace DOAN_QLBanHangThoiTrang
             setControl(false);
         }
 
-        
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim().ToLower();
+
+            var data = db.Categories
+                        .ToList()
+                        .Where(c =>
+                            c.CategoryID.ToString().Contains(keyword) ||
+                            c.CategoryName.ToLower().Contains(keyword) ||
+                            (c.Description != null && c.Description.ToLower().Contains(keyword)))
+                        .Select(c => new
+                        {
+                            c.CategoryID,
+                            c.CategoryName,
+                            c.Description
+                        })
+                        .ToList();
+
+            dgvCategories.DataSource = data;
+        }
     }
 }
 

@@ -13,7 +13,7 @@ namespace DOAN_QLBanHangThoiTrang
     public partial class frmBills : Form
     {
         DataContext db = new DataContext();
-        bool AddNew = false;
+        bool Addnew = false;
         public frmBills()
         {
             InitializeComponent();
@@ -22,9 +22,9 @@ namespace DOAN_QLBanHangThoiTrang
         {
             txtBillID.Enabled = false;
             cbbCustomerID.Enabled = check;
-            txtEmployeeID.Enabled = check;
+            cbbEmployeeID.Enabled = check;
             dtpBillDate.Enabled = check;
-            txtDiscountPercent.Enabled = check;
+            cbbDiscountPercent.Enabled = check;
             txtTotalAmount.Enabled = check;
 
             btnSave.Enabled = check;
@@ -35,11 +35,18 @@ namespace DOAN_QLBanHangThoiTrang
             btnDelete.Enabled = !check;
             dgvBills.Enabled = !check;
         }
+        private void LoadDiscountPercent()
+        {
+            for (int i = 5; i <= 50; i += 5)
+            {
+                cbbDiscountPercent.Items.Add(i + "%");
+            }
+        }
         private void LoadComboBox()
         {
-            txtEmployeeID.DataSource = db.Employees.ToList();
-            txtEmployeeID.DisplayMember = "Name";
-            txtEmployeeID.ValueMember = "EmployeeID";
+            cbbEmployeeID.DataSource = db.Employees.ToList();
+            cbbEmployeeID.DisplayMember = "Name";
+            cbbEmployeeID.ValueMember = "EmployeeID";
             cbbCustomerID.DataSource = db.Customers.ToList();
             cbbCustomerID.DisplayMember = "Name";
             cbbCustomerID.ValueMember = "CustomerID";
@@ -66,19 +73,20 @@ namespace DOAN_QLBanHangThoiTrang
 
             LoadComboBox();
             LoadGridData();
+            LoadDiscountPercent();
             setControl(false);
-
+            txtSearch.TextChanged += txtSearch_TextChanged;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AddNew = true;
+            Addnew = true;
             setControl(true);
             cbbCustomerID.SelectedIndex = -1;
-            txtEmployeeID.SelectedIndex = -1;
+            cbbEmployeeID.SelectedIndex = -1;
             txtBillID.Clear();
             dtpBillDate.Value = DateTime.Now;
-            txtDiscountPercent.Text = "0";
+            cbbDiscountPercent.SelectedIndex = -1;
             txtTotalAmount.Text = "0";
             cbbCustomerID.Focus();
 
@@ -91,16 +99,16 @@ namespace DOAN_QLBanHangThoiTrang
 
             txtBillID.Text = dgvBills.Rows[i].Cells["BillID"].Value.ToString();
             cbbCustomerID.SelectedValue = dgvBills.Rows[i].Cells["CustomerID"].Value;
-            txtEmployeeID.SelectedValue = dgvBills.Rows[i].Cells["EmployeeID"].Value;
+            cbbEmployeeID.SelectedValue = dgvBills.Rows[i].Cells["EmployeeID"].Value;
             dtpBillDate.Value = Convert.ToDateTime(dgvBills.Rows[i].Cells["BillDate"].Value);
-            txtDiscountPercent.Text = dgvBills.Rows[i].Cells["DiscountPercent"].Value.ToString();
+            cbbDiscountPercent.SelectedValue = dgvBills.Rows[i].Cells["DiscountPercent"].Value;
             txtTotalAmount.Text = dgvBills.Rows[i].Cells["TotalAmount"].Value.ToString();
 
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            AddNew = false;
+            Addnew = false;
             setControl(true);
             cbbCustomerID.Focus();
 
@@ -145,26 +153,68 @@ namespace DOAN_QLBanHangThoiTrang
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (dgvBills.CurrentRow == null) return;
-
-            if (MessageBox.Show("Bạn muốn xóa hóa đơn này không?", "Thông báo",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Stop) == DialogResult.Yes)
+            if (Addnew)
             {
-                int id = (int)dgvBills.CurrentRow.Cells["BillID"].Value;
-
-                var details = db.BillDetails.Where(d => d.BillID == id);
-                db.BillDetails.RemoveRange(details);
-
-                var itemDelete = db.Bills.SingleOrDefault(b => b.BillID == id);
-                if (itemDelete != null)
+                if (cbbCustomerID.SelectedValue == null || cbbEmployeeID.SelectedValue == null || string.IsNullOrEmpty(cbbDiscountPercent.Text))
                 {
-                    db.Bills.Remove(itemDelete);
+                    MessageBox.Show("Vui lòng nhập đầy đủ thông tin trước khi lưu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                tblBills newBills = new tblBills
+                {
+                    CustomerID = (int)cbbCustomerID.SelectedValue,
+                    EmployeeID = (int)cbbEmployeeID.SelectedValue,
+                    BillDate = dtpBillDate.Value,
+                    DiscountPercent = int.Parse(cbbDiscountPercent.Text.Replace("%", "")),
+                    TotalAmount = decimal.Parse(txtTotalAmount.Text.Trim())
+                };
+                db.Bills.Add(newBills);
+                db.SaveChanges();
+                LoadGridData();
+            }
+            else
+            {
+                if (dgvBills.CurrentRow == null) return;
+                int id = int.Parse(txtBillID.Text);
+                tblBills billUpdate = db.Bills.SingleOrDefault(b => b.BillID == id);
+                if (billUpdate != null)
+                {
+                    billUpdate.CustomerID = (int)cbbCustomerID.SelectedValue;
+                    billUpdate.EmployeeID = (int)cbbEmployeeID.SelectedValue;
+                    billUpdate.BillDate = dtpBillDate.Value;
+                    billUpdate.DiscountPercent = int.TryParse(cbbDiscountPercent.Text.Replace("%", ""), out int d) ? d : 0;
+                    billUpdate.TotalAmount = decimal.Parse(txtTotalAmount.Text.Trim());
+
                     db.SaveChanges();
                     LoadGridData();
+
                 }
+                setControl(false);
             }
 
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim().ToLower();
+
+            var data = db.Bills.ToList().Where(b =>
+                    b.BillID.ToString().Contains(keyword) ||
+                    b.CustomerID.ToString().Contains(keyword) ||
+                    b.EmployeeID.ToString().Contains(keyword) ||
+                    b.TotalAmount.ToString().Contains(keyword))
+                    .Select(b => new
+                    {
+                        b.BillID,
+                        b.CustomerID,
+                        b.EmployeeID,
+                        b.BillDate,
+                        b.DiscountPercent,
+                        b.TotalAmount
+                    })
+                    .ToList();
+
+            dgvBills.DataSource = data;
         }
     }
 }

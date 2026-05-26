@@ -201,5 +201,18 @@ namespace DOAN_QLBanHangThoiTrang
 
             }
         }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            string keyword = txtSearch.Text.Trim().ToLower();
+
+            var data = db.Accounts.Where(a =>
+                            a.Username.ToLower().Contains(keyword) ||
+                            a.FullName.ToLower().Contains(keyword) ||
+                            a.Role.ToLower().Contains(keyword))
+                            .ToList();
+
+            dgvAccounts.DataSource = data;
+        }
     }
 }

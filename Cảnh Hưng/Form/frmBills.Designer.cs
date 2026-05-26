@@ -37,11 +37,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBillID = new System.Windows.Forms.TextBox();
-            this.txtEmployeeID = new System.Windows.Forms.ComboBox();
+            this.cbbEmployeeID = new System.Windows.Forms.ComboBox();
             this.cbbCustomerID = new System.Windows.Forms.ComboBox();
             this.dtpBillDate = new System.Windows.Forms.DateTimePicker();
-            this.txtDiscountPercent = new System.Windows.Forms.TextBox();
             this.txtTotalAmount = new System.Windows.Forms.TextBox();
+            this.cbbDiscountPercent = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dgvBills = new System.Windows.Forms.DataGridView();
             this.BillID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +50,7 @@
             this.BillDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiscountPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
@@ -88,11 +88,11 @@
             this.tableLayoutPanel1.Controls.Add(this.label6, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label5, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtBillID, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtEmployeeID, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cbbEmployeeID, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.cbbCustomerID, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.dtpBillDate, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtDiscountPercent, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtTotalAmount, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cbbDiscountPercent, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 43);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -170,20 +170,20 @@
             this.txtBillID.Size = new System.Drawing.Size(243, 27);
             this.txtBillID.TabIndex = 1;
             // 
-            // txtEmployeeID
+            // cbbEmployeeID
             // 
-            this.txtEmployeeID.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtEmployeeID.FormattingEnabled = true;
-            this.txtEmployeeID.Location = new System.Drawing.Point(156, 68);
-            this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.Size = new System.Drawing.Size(243, 28);
-            this.txtEmployeeID.TabIndex = 2;
+            this.cbbEmployeeID.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbbEmployeeID.FormattingEnabled = true;
+            this.cbbEmployeeID.Location = new System.Drawing.Point(156, 70);
+            this.cbbEmployeeID.Name = "cbbEmployeeID";
+            this.cbbEmployeeID.Size = new System.Drawing.Size(243, 28);
+            this.cbbEmployeeID.TabIndex = 2;
             // 
             // cbbCustomerID
             // 
             this.cbbCustomerID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbCustomerID.FormattingEnabled = true;
-            this.cbbCustomerID.Location = new System.Drawing.Point(601, 13);
+            this.cbbCustomerID.Location = new System.Drawing.Point(601, 15);
             this.cbbCustomerID.Name = "cbbCustomerID";
             this.cbbCustomerID.Size = new System.Drawing.Size(243, 28);
             this.cbbCustomerID.TabIndex = 2;
@@ -198,14 +198,6 @@
             this.dtpBillDate.Size = new System.Drawing.Size(243, 27);
             this.dtpBillDate.TabIndex = 3;
             // 
-            // txtDiscountPercent
-            // 
-            this.txtDiscountPercent.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtDiscountPercent.Location = new System.Drawing.Point(156, 124);
-            this.txtDiscountPercent.Name = "txtDiscountPercent";
-            this.txtDiscountPercent.Size = new System.Drawing.Size(243, 27);
-            this.txtDiscountPercent.TabIndex = 5;
-            // 
             // txtTotalAmount
             // 
             this.txtTotalAmount.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -213,6 +205,15 @@
             this.txtTotalAmount.Name = "txtTotalAmount";
             this.txtTotalAmount.Size = new System.Drawing.Size(243, 27);
             this.txtTotalAmount.TabIndex = 5;
+            // 
+            // cbbDiscountPercent
+            // 
+            this.cbbDiscountPercent.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cbbDiscountPercent.FormattingEnabled = true;
+            this.cbbDiscountPercent.Location = new System.Drawing.Point(156, 125);
+            this.cbbDiscountPercent.Name = "cbbDiscountPercent";
+            this.cbbDiscountPercent.Size = new System.Drawing.Size(243, 28);
+            this.cbbDiscountPercent.TabIndex = 2;
             // 
             // label7
             // 
@@ -291,27 +292,28 @@
             this.TotalAmount.Name = "TotalAmount";
             this.TotalAmount.Width = 180;
             // 
-            // guna2TextBox1
+            // txtSearch
             // 
-            this.guna2TextBox1.BorderRadius = 15;
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.IconRight = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_search_50;
-            this.guna2TextBox1.IconRightOffset = new System.Drawing.Point(10, 0);
-            this.guna2TextBox1.Location = new System.Drawing.Point(528, 250);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(377, 28);
-            this.guna2TextBox1.TabIndex = 37;
+            this.txtSearch.BorderRadius = 15;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtSearch.DefaultText = "";
+            this.txtSearch.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtSearch.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtSearch.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtSearch.IconRight = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_search_50;
+            this.txtSearch.IconRightOffset = new System.Drawing.Point(10, 0);
+            this.txtSearch.Location = new System.Drawing.Point(528, 250);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.PlaceholderText = "";
+            this.txtSearch.SelectedText = "";
+            this.txtSearch.Size = new System.Drawing.Size(377, 28);
+            this.txtSearch.TabIndex = 37;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // btnAdd
             // 
@@ -434,7 +436,7 @@
             this.Controls.Add(this.btnNotsaved);
             this.Controls.Add(this.dgvBills);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.guna2GroupBox1);
             this.Name = "frmBills";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -460,11 +462,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBillID;
-        private System.Windows.Forms.ComboBox txtEmployeeID;
+        private System.Windows.Forms.ComboBox cbbEmployeeID;
         private System.Windows.Forms.ComboBox cbbCustomerID;
         private System.Windows.Forms.DateTimePicker dtpBillDate;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private System.Windows.Forms.DataGridView dgvBills;
         private System.Windows.Forms.DataGridViewTextBoxColumn BillID;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerID;
@@ -477,7 +479,7 @@
         private Guna.UI2.WinForms.Guna2Button btnDelete;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private Guna.UI2.WinForms.Guna2Button btnNotsaved;
-        private System.Windows.Forms.TextBox txtDiscountPercent;
         private System.Windows.Forms.TextBox txtTotalAmount;
+        private System.Windows.Forms.ComboBox cbbDiscountPercent;
     }
 }
