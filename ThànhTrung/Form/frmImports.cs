@@ -48,9 +48,9 @@ namespace DOAN_QLBanHangThoiTrang
         {
                 cbbEmployeeID.DataSource = db.Employees.ToList();
 
-                cbbEmployeeID.DisplayMember = "FullName";   // hiện tên
-                cbbEmployeeID.ValueMember = "EmployeeID";   // lưu ID
-                 // lưu ID
+                cbbEmployeeID.DisplayMember = "FullName";   
+                cbbEmployeeID.ValueMember = "EmployeeID";   
+                 
         }
         private void frmImports_Load(object sender, EventArgs e)
         {
@@ -96,7 +96,7 @@ namespace DOAN_QLBanHangThoiTrang
             int i = e.RowIndex;
             if (i < 0) return;
             txtImportID.Text = dgvImport.Rows[i].Cells["ImportID"].Value.ToString();
-            cbbEmployeeID.Text = dgvImport.Rows[i].Cells["EmployeeID"].Value.ToString();
+            cbbEmployeeID.SelectedValue = dgvImport.Rows[i].Cells["EmployeeID"].Value;
             txtSupplierName.Text = dgvImport.Rows[i].Cells["SupplierName"].Value.ToString();
             txtSupplierPhone.Text = dgvImport.Rows[i].Cells["SupplierPhone"].Value.ToString();
             txtSupplierAddress.Text = dgvImport.Rows[i].Cells["SupplierAddress"].Value.ToString();
@@ -111,7 +111,7 @@ namespace DOAN_QLBanHangThoiTrang
             setContol(true);
             txtImportID.Clear();
             txtTotalAmount.Clear();
-            cbbEmployeeID.Text = "";
+            cbbEmployeeID.SelectedIndex = -1;
             txtSupplierName.Clear();
             txtSupplierAddress.Clear();
             txtSupplierPhone.Clear();
@@ -125,7 +125,7 @@ namespace DOAN_QLBanHangThoiTrang
             AddNew = false;
             setContol(true);
             cbbEmployeeID.Enabled = false;
-            cbbEmployeeID.Focus();
+            txtSupplierName.Focus();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -140,22 +140,10 @@ namespace DOAN_QLBanHangThoiTrang
 
             if (AddNew)
             {
-                //Kiểm tra trùng EmployeeID
-                //int inputEmployeeID = int.Parse(txtEmployeeID.Text.Trim());
-                // bool isExisted = db.Imports.Any(i => i.ImportID == inputEmployeeID);
-                // if (isExisted)
-                //  {
-                // MessageBox.Show("Mã nhân viên này đã tồn tại! Vui lòng chọn mã khác.",
-                //   "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //   txtImportID.Focus();
-                //   return;
-                //   }
-
-                //Nếu không trùng thì tiến hành thêm mới
                 tblImports newImport = new tblImports
                 {
 
-                    EmployeeID = int.Parse(cbbEmployeeID.Text.Trim()),
+                    EmployeeID = (int)cbbEmployeeID.SelectedValue,
                     SupplierName = txtSupplierName.Text.Trim(),
                     SupplierAddress = txtSupplierAddress.Text.Trim(),
                     SupplierPhone = txtSupplierPhone.Text.Trim(),
@@ -168,17 +156,16 @@ namespace DOAN_QLBanHangThoiTrang
                 db.SaveChanges();
                 LoadGridData();
             }
-            else //Nếu trước đó ấn vào nút sửa thì đoạn này sẽ thực hiện
+            else 
             {
                 if (dgvImport.CurrentRow == null) return;
 
                 int id = int.Parse(txtImportID.Text);
-                // Tìm đối tượng cần sửa bằng LINQ
                 tblImports importUpdate = db.Imports.SingleOrDefault(i => i.ImportID == id);
 
                 if (importUpdate != null)
                 {
-                    importUpdate.EmployeeID = int.Parse(cbbEmployeeID.Text.Trim());
+                    importUpdate.EmployeeID = (int)cbbEmployeeID.SelectedValue;
                     importUpdate.SupplierName = txtSupplierName.Text.Trim();
                     importUpdate.SupplierPhone = txtSupplierPhone.Text.Trim();
                     importUpdate.SupplierAddress = txtSupplierAddress.Text.Trim();

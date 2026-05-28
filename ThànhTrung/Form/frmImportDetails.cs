@@ -35,6 +35,23 @@ namespace DOAN_QLBanHangThoiTrang
             btnDelete.Enabled = !check;
             dgvImportDetail.Enabled = !check;
         }
+        private void loadImportID()
+        {
+            var data = from i in db.Imports
+                       select i;
+            cbbImportID.DataSource = db.Imports.ToList();
+            cbbImportID.DisplayMember = "ImportID";
+            cbbImportID.ValueMember = "ImportID";
+        }
+
+        private void loadProductID()
+        {
+            var data = from p in db.products
+                       select p;
+            cbbProductID.DataSource = db.products.ToList();
+            cbbProductID.DisplayMember = "ProductTitle";
+            cbbProductID.ValueMember = "ProductID";
+        }
         private void LoadGridData()
         {
             var data = from i in db.ImportDetails
@@ -47,6 +64,8 @@ namespace DOAN_QLBanHangThoiTrang
             dgvImportDetail.AutoGenerateColumns = false;
             dgvImportDetail.AllowUserToAddRows = false;
             LoadGridData();
+            loadImportID();
+            loadProductID();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

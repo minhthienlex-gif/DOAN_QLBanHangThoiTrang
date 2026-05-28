@@ -158,9 +158,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(458, 112);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 20);
+            this.label6.Size = new System.Drawing.Size(72, 20);
             this.label6.TabIndex = 0;
-            this.label6.Text = "Thành tiền";
+            this.label6.Text = "Tổng tiền";
             // 
             // txtImportDetailID
             // 

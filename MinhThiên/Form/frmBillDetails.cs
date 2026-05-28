@@ -26,7 +26,7 @@ namespace DOAN_QLBanHangThoiTrang
             cbbProductID.Enabled = check;
             nudQuantity.Enabled = check;
             txtPrice.Enabled = check;
-            txtTotal.Enabled = check;
+            txtTotal.Enabled = false;
 
             btnSave.Enabled = check;
             btnNotsaved.Enabled = check;
@@ -36,6 +36,24 @@ namespace DOAN_QLBanHangThoiTrang
          
     
             dgvBillDetail.Enabled = !check;
+        }
+        private void LoadProductID()
+        {
+            var data = from p in db.products
+                       select p;
+
+            cbbProductID.DataSource = data.ToList();
+            cbbProductID.DisplayMember = "ProductTitle";
+            cbbProductID.ValueMember = "ProductID";
+        }
+        private void LoadBillID()
+        {
+            var data = from b in db.Bills
+                       select b;
+
+            cbbBillID.DataSource = data.ToList();
+            cbbBillID.DisplayMember = "BillID";
+            cbbBillID.ValueMember = "BillID";
         }
         private void LoadGridData()
         {
@@ -49,6 +67,8 @@ namespace DOAN_QLBanHangThoiTrang
             dgvBillDetail.AutoGenerateColumns = false;
             dgvBillDetail.AllowUserToAddRows = false;
             LoadGridData();
+            LoadBillID();
+            LoadProductID();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -89,16 +109,48 @@ namespace DOAN_QLBanHangThoiTrang
                 dgvBillDetail_CellEnter(dgvBillDetail, args);
             }
         }
+        private void TinhThanhTien()
+        {
+            int quantity = (int)nudQuantity.Value;
 
+            decimal price = 0;
+
+            if (txtPrice.Text.Trim() != "")
+                price = decimal.Parse(txtPrice.Text);
+
+            txtTotal.Text = (quantity * price).ToString();
+        }
+        private void nudQuantity_ValueChanged(object sender, EventArgs e)
+        {
+            TinhThanhTien();
+        }
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            TinhThanhTien();
+        }
+        private void CapNhatTongHoaDon(int billID)
+        {
+            decimal tong = db.BillDetails
+                             .Where(x => x.BillID == billID)
+                             .Sum(x => (decimal?)x.Total) ?? 0;
+
+            var bill = db.Bills.SingleOrDefault(x => x.BillID == billID);
+
+            if (bill != null)
+            {
+                bill.TotalAmount = tong;
+                db.SaveChanges();
+            }
+        }
         private void dgvBillDetail_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
             if (i < 0) return;
 
             txtBillDetailID.Text = dgvBillDetail.Rows[i].Cells["BillDetailID"].Value.ToString();
-            cbbBillID.Text = dgvBillDetail.Rows[i].Cells["BillID"].Value.ToString();
-            cbbProductID.Text = dgvBillDetail.Rows[i].Cells["ProductID"].Value.ToString();
-            nudQuantity.Text = dgvBillDetail.Rows[i].Cells["Quantity"].Value.ToString();
+            cbbBillID.SelectedValue = dgvBillDetail.Rows[i].Cells["BillID"].Value;
+            cbbProductID.SelectedValue = dgvBillDetail.Rows[i].Cells["ProductID"].Value;
+            nudQuantity.Value = Convert.ToDecimal(dgvBillDetail.Rows[i].Cells["Quantity"].Value);
             txtPrice.Text = dgvBillDetail.Rows[i].Cells["Price"].Value.ToString();
             txtTotal.Text = dgvBillDetail.Rows[i].Cells["Total"].Value.ToString();
         }
@@ -108,8 +160,8 @@ namespace DOAN_QLBanHangThoiTrang
             AddNew = true;
             setContol(true);
             txtBillDetailID.Clear();
-            cbbBillID.Text = "";
-            cbbProductID.Text = "";
+            cbbBillID.SelectedIndex = -1;
+            cbbProductID.SelectedIndex = -1;
             nudQuantity.Value = 0;
             txtPrice.Clear();
             txtTotal.Clear();
@@ -125,50 +177,48 @@ namespace DOAN_QLBanHangThoiTrang
                 cbbBillID.Focus();
                 return;
             }
+            if (cbbBillID.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn hóa đơn!");
+                return;
+            }
 
-
+            if (cbbProductID.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm!");
+                return;
+            }
             if (AddNew)
             {
-                //Kiểm tra trùng EmployeeID
-                //int inputEmployeeID = int.Parse(txtEmployeeID.Text.Trim());
-                // bool isExisted = db.Imports.Any(i => i.ImportID == inputEmployeeID);
-                // if (isExisted)
-                //  {
-                // MessageBox.Show("Mã nhân viên này đã tồn tại! Vui lòng chọn mã khác.",
-                //   "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //   txtImportID.Focus();
-                //   return;
-                //   }
-
-                //Nếu không trùng thì tiến hành thêm mới
                 tblBillDetails newBillDetail = new tblBillDetails
                 {
 
 
-                    BillID = int.Parse(cbbBillID.Text.Trim()),
-                    ProductID = int.Parse(cbbProductID.Text.Trim()),
-                    Quantity = int.Parse(nudQuantity.Text.Trim()),
+                    BillID = (int)cbbBillID.SelectedValue,
+                    ProductID = (int)cbbProductID.SelectedValue,
+                    Quantity = (int)nudQuantity.Value,
                     Price = decimal.Parse(txtPrice.Text.Trim()),
-                    Total = decimal.Parse(txtTotal.Text.Trim())
+                    Total = (int)nudQuantity.Value * decimal.Parse(txtPrice.Text)
                 };
 
                 db.BillDetails.Add(newBillDetail);
                 db.SaveChanges();
+                CapNhatTongHoaDon(newBillDetail.BillID);
                 LoadGridData();
             }
-            else //Nếu trước đó ấn vào nút sửa thì đoạn này sẽ thực hiện
+            else 
             {
                 if (dgvBillDetail.CurrentRow == null) return;
 
                 int id = int.Parse(txtBillDetailID.Text);
-                // Tìm đối tượng cần sửa bằng LINQ
+                
                 tblBillDetails importUpdate = db.BillDetails.SingleOrDefault(i => i.BillDetailID == id);
 
                 if (importUpdate != null)
                 {
-                    importUpdate.BillID = int.Parse(cbbBillID.Text.Trim());
-                    importUpdate.ProductID = int.Parse(cbbProductID.Text.Trim());
-                    importUpdate.Quantity = int.Parse(nudQuantity.Text.Trim());
+                    importUpdate.BillID = (int)cbbBillID.SelectedValue;
+                    importUpdate.ProductID = (int)cbbProductID.SelectedValue;
+                    importUpdate.Quantity = (int)nudQuantity.Value;
                     importUpdate.Price = decimal.Parse(txtPrice.Text.Trim());
                     importUpdate.Total = decimal.Parse(txtTotal.Text.Trim());
 
@@ -195,5 +245,6 @@ namespace DOAN_QLBanHangThoiTrang
 
             dgvBillDetail.DataSource = data;
         }
+
     }
 }
