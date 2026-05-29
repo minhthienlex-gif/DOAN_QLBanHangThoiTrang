@@ -25,7 +25,7 @@ namespace DOAN_QLBanHangThoiTrang
             cbbEmployeeID.Enabled = check;
             dtpBillDate.Enabled = check;
             cbbDiscountPercent.Enabled = check;
-            txtTotalAmount.Enabled = check;
+            txtTotalAmount.Enabled = false;
 
             btnSave.Enabled = check;
             btnNotsaved.Enabled = check;

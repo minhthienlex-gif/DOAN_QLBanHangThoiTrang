@@ -132,9 +132,7 @@ namespace DOAN_QLBanHangThoiTrang
         }
         private void CapNhatTongHoaDon(int billID)
         {
-            decimal tong = db.BillDetails
-                             .Where(x => x.BillID == billID)
-                             .Sum(x => (decimal?)x.Total) ?? 0;
+            decimal tong = db.BillDetails.Where(x => x.BillID == billID).Sum(x => (decimal?)x.Total) ?? 0;
 
             var bill = db.Bills.SingleOrDefault(x => x.BillID == billID);
 
@@ -201,8 +199,6 @@ namespace DOAN_QLBanHangThoiTrang
             {
                 tblBillDetails newBillDetail = new tblBillDetails
                 {
-
-
                     BillID = (int)cbbBillID.SelectedValue,
                     ProductID = (int)cbbProductID.SelectedValue,
                     Quantity = (int)nudQuantity.Value,
