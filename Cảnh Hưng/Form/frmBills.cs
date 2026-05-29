@@ -45,10 +45,10 @@ namespace DOAN_QLBanHangThoiTrang
         private void LoadComboBox()
         {
             cbbEmployeeID.DataSource = db.Employees.ToList();
-            cbbEmployeeID.DisplayMember = "Name";
+            cbbEmployeeID.DisplayMember = "FullName";
             cbbEmployeeID.ValueMember = "EmployeeID";
             cbbCustomerID.DataSource = db.Customers.ToList();
-            cbbCustomerID.DisplayMember = "Name";
+            cbbCustomerID.DisplayMember = "FullName";
             cbbCustomerID.ValueMember = "CustomerID";
         }
         private void LoadGridData()
