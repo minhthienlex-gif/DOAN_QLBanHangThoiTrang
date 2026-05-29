@@ -132,13 +132,18 @@ namespace DOAN_QLBanHangThoiTrang
         }
         private void CapNhatTongHoaDon(int billID)
         {
-            decimal tong = db.BillDetails.Where(x => x.BillID == billID).Sum(x => (decimal?)x.Total) ?? 0;
+            decimal tong = db.BillDetails
+                     .Where(x => x.BillID == billID)
+                     .Sum(x => (decimal?)x.Total) ?? 0;
 
             var bill = db.Bills.SingleOrDefault(x => x.BillID == billID);
 
             if (bill != null)
             {
-                bill.TotalAmount = tong;
+                int giam = bill.DiscountPercent;
+
+                bill.TotalAmount = tong - (tong * giam / 100);
+
                 db.SaveChanges();
             }
         }
@@ -239,17 +244,12 @@ namespace DOAN_QLBanHangThoiTrang
         {
             string keyword = txtSearch.Text.Trim().ToLower();
 
-            var data = db.BillDetails
-                        .ToList()
-                        .Where(b =>
-                            b.BillDetailID.ToString().Contains(keyword) ||
-                            b.BillID.ToString().Contains(keyword) ||
-                            b.ProductID.ToString().Contains(keyword) ||
-                            b.Quantity.ToString().Contains(keyword) ||
-                            b.Price.ToString().Contains(keyword) ||
-                            b.Total.ToString().Contains(keyword))
-                        .ToList();
-
+            var data = db.BillDetails.ToList().Where(b => b.BillDetailID.ToString().Contains(keyword) ||
+                                                     b.BillID.ToString().Contains(keyword) ||
+                                                     b.ProductID.ToString().Contains(keyword) ||
+                                                     b.Quantity.ToString().Contains(keyword) ||
+                                                     b.Price.ToString().Contains(keyword) ||
+                                                     b.Total.ToString().Contains(keyword)).ToList();
             dgvBillDetail.DataSource = data;
         }
 

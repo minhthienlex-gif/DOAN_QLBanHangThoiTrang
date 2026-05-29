@@ -80,7 +80,7 @@ namespace DOAN_QLBanHangThoiTrang
 
             string imgPath = dgvEmployees.Rows[i].Cells["ImagePath"].Value?.ToString();
             selectedImagePath = imgPath ?? "";
-            if (!string.IsNullOrEmpty(imgPath))
+            if(!string.IsNullOrEmpty(imgPath))
             {
                 try
                 {

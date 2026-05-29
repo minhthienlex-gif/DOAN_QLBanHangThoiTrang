@@ -101,7 +101,7 @@ namespace DOAN_QLBanHangThoiTrang
             cbbCustomerID.SelectedValue = dgvBills.Rows[i].Cells["CustomerID"].Value;
             cbbEmployeeID.SelectedValue = dgvBills.Rows[i].Cells["EmployeeID"].Value;
             dtpBillDate.Value = Convert.ToDateTime(dgvBills.Rows[i].Cells["BillDate"].Value);
-            cbbDiscountPercent.SelectedValue = dgvBills.Rows[i].Cells["DiscountPercent"].Value;
+            cbbDiscountPercent.Text = dgvBills.Rows[i].Cells["DiscountPercent"].Value.ToString() + "%";
             txtTotalAmount.Text = dgvBills.Rows[i].Cells["TotalAmount"].Value.ToString();
 
         }
@@ -150,7 +150,7 @@ namespace DOAN_QLBanHangThoiTrang
             }
 
         }
-
+       
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (Addnew)
