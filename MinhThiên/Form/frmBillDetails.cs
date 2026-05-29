@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -91,6 +92,7 @@ namespace DOAN_QLBanHangThoiTrang
 
                 if (userDelete != null)
                 {
+                    int billID = userDelete.BillID;
                     db.BillDetails.Remove(userDelete);
                     db.SaveChanges();
                     LoadGridData();
@@ -188,6 +190,13 @@ namespace DOAN_QLBanHangThoiTrang
                 MessageBox.Show("Vui lòng chọn sản phẩm!");
                 return;
             }
+            decimal price;
+            if (!decimal.TryParse(txtPrice.Text.Trim(), out price))
+            {
+                MessageBox.Show("Giá không hợp lệ!");
+                txtPrice.Focus();
+                return;
+            }
             if (AddNew)
             {
                 tblBillDetails newBillDetail = new tblBillDetails
@@ -197,13 +206,14 @@ namespace DOAN_QLBanHangThoiTrang
                     BillID = (int)cbbBillID.SelectedValue,
                     ProductID = (int)cbbProductID.SelectedValue,
                     Quantity = (int)nudQuantity.Value,
-                    Price = decimal.Parse(txtPrice.Text.Trim()),
-                    Total = (int)nudQuantity.Value * decimal.Parse(txtPrice.Text)
+                    Price = price,
+                    Total = (int)nudQuantity.Value * price
                 };
 
                 db.BillDetails.Add(newBillDetail);
                 db.SaveChanges();
                 CapNhatTongHoaDon(newBillDetail.BillID);
+                
                 LoadGridData();
             }
             else 
@@ -219,10 +229,11 @@ namespace DOAN_QLBanHangThoiTrang
                     importUpdate.BillID = (int)cbbBillID.SelectedValue;
                     importUpdate.ProductID = (int)cbbProductID.SelectedValue;
                     importUpdate.Quantity = (int)nudQuantity.Value;
-                    importUpdate.Price = decimal.Parse(txtPrice.Text.Trim());
-                    importUpdate.Total = decimal.Parse(txtTotal.Text.Trim());
+                    importUpdate.Price = price;
+                    importUpdate.Total = (int)nudQuantity.Value * price;
 
                     db.SaveChanges();
+                    CapNhatTongHoaDon(importUpdate.BillID);
                     LoadGridData();
                 }
             }
