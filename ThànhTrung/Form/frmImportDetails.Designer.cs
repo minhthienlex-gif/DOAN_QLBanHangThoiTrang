@@ -190,7 +190,7 @@
             // 
             this.cbbImportID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbImportID.FormattingEnabled = true;
-            this.cbbImportID.Location = new System.Drawing.Point(591, 10);
+            this.cbbImportID.Location = new System.Drawing.Point(591, 12);
             this.cbbImportID.Name = "cbbImportID";
             this.cbbImportID.Size = new System.Drawing.Size(256, 28);
             this.cbbImportID.TabIndex = 3;
@@ -199,7 +199,7 @@
             // 
             this.cbbProductID.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cbbProductID.FormattingEnabled = true;
-            this.cbbProductID.Location = new System.Drawing.Point(173, 59);
+            this.cbbProductID.Location = new System.Drawing.Point(173, 61);
             this.cbbProductID.Name = "cbbProductID";
             this.cbbProductID.Size = new System.Drawing.Size(256, 28);
             this.cbbProductID.TabIndex = 3;

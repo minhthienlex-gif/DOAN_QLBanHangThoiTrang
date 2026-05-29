@@ -105,8 +105,9 @@ namespace DOAN_QLBanHangThoiTrang
             if (i < 0) return;
 
             txtImportDetailID.Text = dgvImportDetail.Rows[i].Cells["ImportDetailID"].Value.ToString();
-            cbbImportID.Text = dgvImportDetail.Rows[i].Cells["ImportID"].Value.ToString();
-            cbbProductID.Text = dgvImportDetail.Rows[i].Cells["ProductID"].Value.ToString();
+            cbbImportID.SelectedValue = dgvImportDetail.Rows[i].Cells["ImportID"].Value;
+
+            cbbProductID.SelectedValue = dgvImportDetail.Rows[i].Cells["ProductID"].Value;
             nudQuantity.Text = dgvImportDetail.Rows[i].Cells["Quantity"].Value.ToString();
             txtPrice.Text = dgvImportDetail.Rows[i].Cells["Price"].Value.ToString();
             txtTotal.Text = dgvImportDetail.Rows[i].Cells["Total"].Value.ToString();
@@ -117,8 +118,8 @@ namespace DOAN_QLBanHangThoiTrang
             AddNew = true;
             setContol(true);
             txtImportDetailID.Clear();
-            cbbImportID.Text= "";
-            cbbProductID.Text = "";
+            cbbImportID.SelectedIndex = -1;
+            cbbProductID.SelectedIndex = -1;
             nudQuantity.Value = 0;
             txtPrice.Clear();
             txtTotal.Clear();
@@ -161,8 +162,8 @@ namespace DOAN_QLBanHangThoiTrang
                 tblImportDetails newImportDetail = new tblImportDetails
                 {
 
-                    ImportID = int.Parse(cbbImportID.Text.Trim()),
-                    ProductID = int.Parse(cbbProductID.Text.Trim()),
+                    ImportID = (int)cbbImportID.SelectedValue,
+                    ProductID = (int)cbbProductID.SelectedValue,
                     Quantity = int.Parse(nudQuantity.Text.Trim()),
                     Price = decimal.Parse(txtPrice.Text.Trim()),
                     Total = decimal.Parse(txtTotal.Text.Trim())
@@ -182,8 +183,8 @@ namespace DOAN_QLBanHangThoiTrang
 
                 if (importUpdate != null)
                 {
-                    importUpdate.ImportID = int.Parse(cbbImportID.Text.Trim());
-                    importUpdate.ProductID = int.Parse(cbbProductID.Text.Trim());
+                    importUpdate.ImportID = (int)cbbImportID.SelectedValue;
+                    importUpdate.ProductID = (int)cbbProductID.SelectedValue;
                     importUpdate.Quantity = int.Parse(nudQuantity.Text.Trim());
                     importUpdate.Price = decimal.Parse(txtPrice.Text.Trim());
                     importUpdate.Total = decimal.Parse(txtTotal.Text.Trim());
