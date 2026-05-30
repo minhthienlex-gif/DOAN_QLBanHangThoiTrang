@@ -83,21 +83,19 @@ namespace DOAN_QLBanHangThoiTrang
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (dgvBillDetail.CurrentRow == null) return;
-            if (MessageBox.Show("Bạn muốn xóa bản ghi này không?", "Thông báo",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Stop) == DialogResult.Yes)
+            if (MessageBox.Show("Bạn có muốn xóa bản ghi này không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.Yes)
             {
                 int id = (int)dgvBillDetail.CurrentRow.Cells["BillDetailID"].Value;
-                var userDelete = db.BillDetails.SingleOrDefault(u => u.BillDetailID == id);
-
-                if (userDelete != null)
+                var bddelete = db.BillDetails.SingleOrDefault(bd => bd.BillDetailID == id);
+                if(bddelete != null)
                 {
-                    int billID = userDelete.BillID;
-                    db.BillDetails.Remove(userDelete);
+                    id = bddelete.BillDetailID;
+                    db.BillDetails.Remove(bddelete);
                     db.SaveChanges();
                     LoadGridData();
                 }
             }
+
         }
 
         private void btnNotsaved_Click(object sender, EventArgs e)
@@ -132,9 +130,7 @@ namespace DOAN_QLBanHangThoiTrang
         }
         private void CapNhatTongHoaDon(int billID)
         {
-            decimal tong = db.BillDetails
-                     .Where(x => x.BillID == billID)
-                     .Sum(x => (decimal?)x.Total) ?? 0;
+            decimal tong = db.BillDetails.Where(x => x.BillID == billID).Sum(x => (decimal?)x.Total) ?? 0;
 
             var bill = db.Bills.SingleOrDefault(x => x.BillID == billID);
 
