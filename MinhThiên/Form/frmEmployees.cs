@@ -212,7 +212,7 @@ namespace DOAN_QLBanHangThoiTrang
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 ofd.Filter = "Image Files(*.jpg; *.jpeg; *.png; *.gif; *.bmp)|*.jpg; *.jpeg; *.png; *.gif; *.bmp";
-                ofd.Title = "Chọn ảnh cho sách";
+                ofd.Title = "Chọn ảnh cho Nhân viên";
 
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {

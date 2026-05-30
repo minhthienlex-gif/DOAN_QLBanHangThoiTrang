@@ -37,7 +37,7 @@ namespace DOAN_QLBanHangThoiTrang
         }
         private void LoadDiscountPercent()
         {
-            for (int i = 5; i <= 50; i += 5)
+            for (int i = 0; i <= 50; i += 5)
             {
                 cbbDiscountPercent.Items.Add(i + "%");
             }
@@ -150,7 +150,7 @@ namespace DOAN_QLBanHangThoiTrang
             }
 
         }
-       
+     
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (Addnew)
@@ -186,6 +186,7 @@ namespace DOAN_QLBanHangThoiTrang
                     billUpdate.TotalAmount = decimal.Parse(txtTotalAmount.Text.Trim());
 
                     db.SaveChanges();
+                   
                     LoadGridData();
 
                 }
@@ -216,5 +217,7 @@ namespace DOAN_QLBanHangThoiTrang
 
             dgvBills.DataSource = data;
         }
+
+      
     }
 }

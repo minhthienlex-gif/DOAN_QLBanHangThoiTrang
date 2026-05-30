@@ -27,7 +27,7 @@ namespace DOAN_QLBanHangThoiTrang
             txtSupplierAddress.Enabled = check;
             txtNote.Enabled = check;
             dtpImportDate.Enabled = check;
-            txtTotalAmount.Enabled = check;
+            txtTotalAmount.Enabled = false;
 
             btnSave.Enabled = check;
             btnNotsaved.Enabled = check;

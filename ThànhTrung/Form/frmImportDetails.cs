@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,7 @@ namespace DOAN_QLBanHangThoiTrang
             cbbProductID.Enabled = check;
             nudQuantity.Enabled = check;
             txtPrice.Enabled = check;
-            txtTotal.Enabled = check;
+            txtTotal.Enabled = false;
 
             btnSave.Enabled = check;
             btnNotsaved.Enabled = check;
@@ -80,7 +81,9 @@ namespace DOAN_QLBanHangThoiTrang
 
                 if (userDelete != null)
                 {
+                    int importID = userDelete.ImportID;
                     db.ImportDetails.Remove(userDelete);
+                    CapNhatTongPhieuNhap(importID);
                     db.SaveChanges();
                     LoadGridData();
                 }
@@ -134,7 +137,36 @@ namespace DOAN_QLBanHangThoiTrang
             cbbImportID.Enabled = false;
             cbbImportID.Focus();
         }
+        private void CapNhatTongPhieuNhap(int importID)
+        {
+            decimal tong = db.ImportDetails.Where(x => x.ImportID == importID).Sum(x => (decimal?)x.Total) ?? 0;
 
+            var import = db.Imports.SingleOrDefault(x => x.ImportID == importID);
+
+            if (import != null)
+            {
+                import.TotalAmount = tong;
+                db.SaveChanges();
+            }
+        }
+        private void TinhThanhTien()
+        {
+            decimal price = 0;
+
+            decimal.TryParse(txtPrice.Text.Trim(), out price);
+
+            txtTotal.Text =
+                ((int)nudQuantity.Value * price).ToString();
+        }
+        private void nudQuantity_ValueChanged(object sender, EventArgs e)
+        {
+            TinhThanhTien();
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            TinhThanhTien();
+        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (cbbImportID.Text.Trim() == "")
@@ -143,30 +175,23 @@ namespace DOAN_QLBanHangThoiTrang
                 cbbImportID.Focus();
                 return;
             }
-
-
+            if (txtPrice.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập giá!");
+                txtPrice.Focus();
+                return;
+            }
             if (AddNew)
             {
-                //Kiểm tra trùng EmployeeID
-                //int inputEmployeeID = int.Parse(txtEmployeeID.Text.Trim());
-                // bool isExisted = db.Imports.Any(i => i.ImportID == inputEmployeeID);
-                // if (isExisted)
-                //  {
-                // MessageBox.Show("Mã nhân viên này đã tồn tại! Vui lòng chọn mã khác.",
-                //   "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                //   txtImportID.Focus();
-                //   return;
-                //   }
-
-                //Nếu không trùng thì tiến hành thêm mới
+                
                 tblImportDetails newImportDetail = new tblImportDetails
                 {
 
                     ImportID = (int)cbbImportID.SelectedValue,
                     ProductID = (int)cbbProductID.SelectedValue,
-                    Quantity = int.Parse(nudQuantity.Text.Trim()),
+                    Quantity = (int)nudQuantity.Value,
                     Price = decimal.Parse(txtPrice.Text.Trim()),
-                    Total = decimal.Parse(txtTotal.Text.Trim())
+                    Total = (int)nudQuantity.Value * decimal.Parse(txtPrice.Text.Trim())
                 };
 
                 db.ImportDetails.Add(newImportDetail);
@@ -185,11 +210,12 @@ namespace DOAN_QLBanHangThoiTrang
                 {
                     importUpdate.ImportID = (int)cbbImportID.SelectedValue;
                     importUpdate.ProductID = (int)cbbProductID.SelectedValue;
-                    importUpdate.Quantity = int.Parse(nudQuantity.Text.Trim());
+                    importUpdate.Quantity = (int)nudQuantity.Value;
                     importUpdate.Price = decimal.Parse(txtPrice.Text.Trim());
-                    importUpdate.Total = decimal.Parse(txtTotal.Text.Trim());
+                    importUpdate.Total = (int)nudQuantity.Value * decimal.Parse(txtPrice.Text.Trim());
 
                     db.SaveChanges();
+                    CapNhatTongPhieuNhap(importUpdate.ImportID);
                     LoadGridData();
                 }
             }
