@@ -45,11 +45,18 @@ namespace DOAN_QLBanHangThoiTrang
             dgvAccounts.DataSource = data.ToList();
             SetContol(false);
         }
+        private void LoadRole()
+        {
+            cbbRole.Items.Clear();
+            cbbRole.Items.Add("Admin");
+            cbbRole.Items.Add("Staff");
+        }
         private void frmAccounts_Load(object sender, EventArgs e)
         {
             dgvAccounts.AutoGenerateColumns = false;
             dgvAccounts.AllowUserToAddRows = false;
 
+            LoadRole();
             LoadGridData();
         }
         public string GetMD5(string password)
@@ -78,7 +85,7 @@ namespace DOAN_QLBanHangThoiTrang
             txtUsername.Clear();
             txtPassword.Clear();
             txtFullname.Clear();
-            cbbRole.Text = "Staff";
+            cbbRole.SelectedItem = "Staff";
             dtpCreatedDate.Value = DateTime.Today;
             ckbStatus.Checked = true;
             txtNote.Clear();
@@ -93,7 +100,7 @@ namespace DOAN_QLBanHangThoiTrang
             txtUsername.Text = dgvAccounts.Rows[i].Cells["Username"].Value.ToString();
             txtPassword.Text = dgvAccounts.Rows[i].Cells["Password"].Value.ToString();
             txtFullname.Text = dgvAccounts.Rows[i].Cells["Fullname"].Value.ToString();
-            cbbRole.Text = dgvAccounts.Rows[i].Cells["Role"].Value.ToString();
+            cbbRole.Text = dgvAccounts.Rows[i].Cells["Role"].Value?.ToString();
             dtpCreatedDate.Value = Convert.ToDateTime(dgvAccounts.Rows[i].Cells["CreatedDate"].Value);
             txtNote.Text = dgvAccounts.Rows[i].Cells["Note"].Value.ToString();
             if ((bool)dgvAccounts.Rows[i].Cells["Status"].Value == true)
@@ -150,7 +157,7 @@ namespace DOAN_QLBanHangThoiTrang
         {
             if (txtUsername.Text.Trim() == "")
             {
-                MessageBox.Show("Tên khách hàng không được để trống!", "Thông báo");
+                MessageBox.Show("Tên đăng nhập không được để trống!", "Thông báo");
                 txtUsername.Focus();
                 return;
             }
@@ -171,7 +178,7 @@ namespace DOAN_QLBanHangThoiTrang
                     Username = txtUsername.Text.Trim(),
                     Password = GetMD5(txtPassword.Text.Trim()),
                     FullName = txtFullname.Text.Trim(),
-                    Role = cbbRole.Text.Trim(),
+                    Role = cbbRole.Text,
                     Status = ckbStatus.Checked,
                     CreatedDate = dtpCreatedDate.Value,
                     Note = txtNote.Text.Trim()
@@ -190,7 +197,7 @@ namespace DOAN_QLBanHangThoiTrang
                     accountsUpdate.Username = txtUsername.Text.Trim();
                     accountsUpdate.Password = GetMD5(txtPassword.Text.Trim());
                     accountsUpdate.FullName = txtFullname.Text.Trim();
-                    accountsUpdate.Role = cbbRole.Text.Trim();
+                    accountsUpdate.Role = cbbRole.Text;
                     accountsUpdate.Status = ckbStatus.Checked;
                     accountsUpdate.CreatedDate = dtpCreatedDate.Value;
                     accountsUpdate.Note = txtNote.Text.Trim();
