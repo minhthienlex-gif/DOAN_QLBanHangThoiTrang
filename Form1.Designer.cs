@@ -106,6 +106,7 @@
             // 
             // mn2Exit
             // 
+            this.mn2Exit.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_exit_50;
             this.mn2Exit.Name = "mn2Exit";
             this.mn2Exit.Size = new System.Drawing.Size(251, 30);
             this.mn2Exit.Text = "Đăng xuất";
@@ -143,8 +144,9 @@
             this.mn2Product,
             this.mn2Categorie,
             this.mn2Customer});
+            this.mn1ManageCategory.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_to_do_list_50;
             this.mn1ManageCategory.Name = "mn1ManageCategory";
-            this.mn1ManageCategory.Size = new System.Drawing.Size(171, 29);
+            this.mn1ManageCategory.Size = new System.Drawing.Size(191, 29);
             this.mn1ManageCategory.Text = "Quản lý danh mục";
             // 
             // mn2Product
@@ -178,7 +180,7 @@
             this.mn2BillDetail,
             this.mn2Import,
             this.mn2ImportDetail});
-            this.mn1SalesManagement.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_to_do_list_50;
+            this.mn1SalesManagement.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_list_64;
             this.mn1SalesManagement.Name = "mn1SalesManagement";
             this.mn1SalesManagement.Size = new System.Drawing.Size(194, 29);
             this.mn1SalesManagement.Text = "Quản lý doanh thu";
@@ -193,6 +195,7 @@
             // 
             // mn2BillDetail
             // 
+            this.mn2BillDetail.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_bill_48;
             this.mn2BillDetail.Name = "mn2BillDetail";
             this.mn2BillDetail.Size = new System.Drawing.Size(247, 30);
             this.mn2BillDetail.Text = "Chi tiết hóa đơn";
@@ -200,6 +203,7 @@
             // 
             // mn2Import
             // 
+            this.mn2Import.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_fast_delivery_64;
             this.mn2Import.Name = "mn2Import";
             this.mn2Import.Size = new System.Drawing.Size(247, 30);
             this.mn2Import.Text = "Phiếu nhập";
@@ -207,6 +211,7 @@
             // 
             // mn2ImportDetail
             // 
+            this.mn2ImportDetail.Image = global::DOAN_QLBanHangThoiTrang.Properties.Resources.icons8_important_book_50;
             this.mn2ImportDetail.Name = "mn2ImportDetail";
             this.mn2ImportDetail.Size = new System.Drawing.Size(247, 30);
             this.mn2ImportDetail.Text = "Chi tiết phiếu nhập";

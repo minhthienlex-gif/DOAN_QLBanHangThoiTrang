@@ -103,6 +103,16 @@ namespace DOAN_QLBanHangThoiTrang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_bill_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-bill-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_bill_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-bill-50", resourceCulture);
@@ -143,6 +153,16 @@ namespace DOAN_QLBanHangThoiTrang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_fast_delivery_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-fast-delivery-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_help_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-help-50", resourceCulture);
@@ -153,9 +173,29 @@ namespace DOAN_QLBanHangThoiTrang.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_important_book_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-important-book-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_list_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-list-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_list_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-list-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
