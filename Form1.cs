@@ -18,6 +18,15 @@ namespace DOAN_QLBanHangThoiTrang
             frm.MdiParent = this;
             frm.Show();
         }
+        public frmMain(string un, string fn, string ro)
+        {
+            InitializeComponent();
+            Username = un;
+            Fullname = fn;
+            Role = ro;
+            this.Text = "Phần mềm quản lý bán hàng thời trang [" + Fullname + "]";
+
+        }
         private void mn2Account_Click(object sender, EventArgs e)
         {
             OpenForm(new frmAccounts());
@@ -69,21 +78,11 @@ namespace DOAN_QLBanHangThoiTrang
             frmLogin loginForm = new frmLogin();
             loginForm.Show();
         }
-
-
         public frmMain()
         {
             InitializeComponent();
         }
 
-        public frmMain( string un,string fn, string ro)
-        {
-            InitializeComponent();
-            Username = un;
-            Fullname = fn;
-            Role = ro;
-            this.Text = "Phần mềm quản lý bán hàng thời trang [" + Fullname + "]";
-
-        }
+        
     }
 }
