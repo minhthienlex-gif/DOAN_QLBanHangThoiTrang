@@ -8,6 +8,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.HtmlControls;
 using System.Windows.Forms;
 
 namespace DOAN_QLBanHangThoiTrang
@@ -76,8 +77,8 @@ namespace DOAN_QLBanHangThoiTrang
                 return sb.ToString();
             }
         }
-
-        private void btnAdd_Click(object sender, EventArgs e)
+        
+    private void btnAdd_Click(object sender, EventArgs e)
         {
             Addnew = true;
             SetContol(true);
@@ -215,7 +216,8 @@ namespace DOAN_QLBanHangThoiTrang
 
             var data = db.Accounts.Where(a => a.Username.ToLower().Contains(keyword) ||
                                          a.FullName.ToLower().Contains(keyword) ||
-                                         a.Role.ToLower().Contains(keyword)).ToList();
+                                         a.Role.ToLower().Contains(keyword) ||
+                                         a.Note.ToLower().Contains(keyword)).ToList();
             dgvAccounts.DataSource = data;
         }
     }
