@@ -60,7 +60,5 @@ namespace DOAN_QLBanHangThoiTrang
                 }
             }
         }
-
-     
     }
 }

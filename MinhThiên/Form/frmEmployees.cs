@@ -73,7 +73,7 @@ namespace DOAN_QLBanHangThoiTrang
             txtFullName.Text = dgvEmployees.Rows[i].Cells["Fullname"].Value.ToString();
             cbbAccountID.SelectedValue = dgvEmployees.Rows[i].Cells["AccountID"].Value;
             txtPhone.Text = dgvEmployees.Rows[i].Cells["Phone"].Value.ToString();
-            txtBirthDate.Text = dgvEmployees.Rows[i].Cells["BirthDate"].Value.ToString();
+            txtBirthDate.Text = Convert.ToDateTime(dgvEmployees.Rows[i].Cells["BirthDate"].Value).ToString("dd/MM/yyyy");
             txtAddress.Text = dgvEmployees.Rows[i].Cells["Address"].Value.ToString();
             txtGender.Text = dgvEmployees.Rows[i].Cells["Gender"].Value.ToString();
             dtpCreatedDate.Value = Convert.ToDateTime(dgvEmployees.Rows[i].Cells["CreatedDate"].Value);
